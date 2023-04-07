@@ -1,0 +1,57 @@
+[
+   
+  
+    {
+        "categoria": "INCIERTOS",
+        "pregunta": "¿Cuándo hablamos de Transitions Signature G8 cuántos colores tenemos disponibles para toda la región NOCCA?",
+        "respuesta": "7",
+        "incorrecta1": "3",
+        "incorrecta2": "2",
+        "incorrecta3": "6",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "INCIERTOS",
+        "pregunta": "Cuando la queja constante del paciente usuario de lentes progresivos es la dificultad para caminar, cuál es la tecnología apropiada para sus lentes:",
+         "respuesta": "Nanoptix",
+        "incorrecta1": "Synchroneyes",
+        "incorrecta2": "Xtend",
+        "incorrecta3": "Flexoptim",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "INCIERTOS",
+        "pregunta": "Dinos 2 beneficios de los lentes Transitions: ",
+        "respuesta": "Inteligentes a la luz, protegen de la luz azul nociva",
+        "incorrecta1": "Protegen de la luz UV, no se rayan, visión confortable",
+        "incorrecta2": "Mantienen su color, Ves mejor de lejos, protegen de la luz del sol",
+        "incorrecta3": "Ver claramente ",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "INCIERTOS",
+        "pregunta": "Dinos 3 beneficios del Antirreflejo:",
+        "respuesta": "Brindan Confort, Reduce los reflejos, Son más estéticos.",
+        "incorrecta1": "Visión confortable, Protección contra luz azul, Reduce el brillo.",
+        "incorrecta2": "Diferentes colores, Cambian con la luz, Visión confortable.",
+        "incorrecta3": "Ideales para conducir, protege de rayas, facilidad de limpieza.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "INCIERTOS",
+        "pregunta": "Los lentes Transitions te protegen de la luz ________________ Nociva.:",
+        "respuesta": "Azul.",
+        "incorrecta1": "Blanca. ",
+        "incorrecta2": "Solar",
+        "incorrecta3": "Infrarroja",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    }
+]

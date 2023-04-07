@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+
+<body style="background-color: red;">
+
+    <style>
+        table {
+            table-layout: fixed;
+            width: 47%;
+            border-collapse: collapse;
+            border: 2px solid rgba(128, 0, 128, 0);
+            text-align: left;
+        }
+
+        .btn {
+            background: rgb(235, 235, 235);
+            /* width: 70%;*/
+            max-width: 100%;
+            padding: 15px;
+            margin: 0px;
+            cursor: pointer;
+            border-radius: 45px;
+            font-family: PublicSans-Regular;
+            font-size: 15px;
+            color: rgb(185, 58, 136);
+        }
+
+        .btn:hover {
+            transform: scale(1.01);
+            background-color: rgba(182, 140, 140, 0.918);
+            color: rgb(179, 177, 177);
+
+        }
+
+        .conpre {
+            height: 100vh;
+        }
+
+        .quest {
+            width: 100%;
+            position: absolute;
+            top: 35%;
+            left: 25%;
+            margin-top: -100px;
+            scale: 0.8;
+        }
+    </style>
+
+    <div id="conpre" class="conpre">
+        <div id="quest" class="quest" style="display: block; z-index: 2; ">
+            <table>
+                <tbody background="/imagenes/fonpre.png">
+                    <div class="puntaje" id="puntaje" style="display: none;"></div>
+                    <div class="categoria" id="categoria" style="display: none;"></div>
+                    <div class="numero" id="numero" style="display: none;"></div>
+                    <tr>
+                        <img src="#" class="imagen" id="imagen" hidden>
+                        <td style="text-align: center; width: 36%; height: 37vh; color: rgb(230, 206, 206);">
+                            <div class="pregunta" id="pregunta"
+                                style="width: 100%; margin-left: 5%; margin-right: 15%; margin-top: 0%;"></div>
+                        </td>
+                        <td style=" padding-left: 15px;">
+                            <table align="center" width="100%" cellspacing="10" cellpadding="1" border='0'>
+                                <tr>
+                                    <td width="50px" height="50px" background="/imagenes/botonPRE.png"
+                                        style="text-align: center;"> <strong> A </strong> </td>
+                                    <td width="450px">
+                                        <div class="btn" id="btn1" onclick="oprimir_btn(0)"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50px" height="50px" background="/imagenes/botonPRE.png"
+                                        style="text-align: center;"> <strong> B </strong> </td>
+                                    <td>
+                                        <div class="btn" id="btn2" onclick="oprimir_btn(1)"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50px" height="50px" background="/imagenes/botonPRE.png"
+                                        style="text-align: center;"> <strong> C </strong> </td>
+                                    <td>
+                                        <div class="btn" id="btn3" onclick="oprimir_btn(2)"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50px" height="50px" background="/imagenes/botonPRE.png"
+                                        style="text-align: center;"> <strong> D </strong> </td>
+                                    <td>
+                                        <div class="btn" id="btn4" onclick="oprimir_btn(3)"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="index.js"></script>
+    </div>
+
+</body>
+
+</html>

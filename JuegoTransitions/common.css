@@ -1,0 +1,289 @@
+/****************************************/
+/* common styles used for v1 through v4 */
+/****************************************/
+
+body {
+    background-image: url(images/futu.jpg);
+    background-size: 100vw 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    /*background-color: blue;*/
+}
+
+#stats {
+    border: 2px solid black;
+}
+
+#controls {
+    width: 28em;
+    float: left;
+    padding: 1em;
+    font-size: 0.7em;
+}
+
+#controls th {
+    text-align: right;
+    vertical-align: middle;
+}
+
+#instructions {
+    clear: left;
+    float: left;
+    width: 17em;
+    padding: 1em;
+    border: 1px solid black;
+    box-shadow: 0 0 5px black;
+}
+
+#racer {
+    /*position: relative;*/
+    z-index: 0;
+    border: 2px solid rgba(255, 255, 255, 0);
+    padding-top: 5%;
+}
+
+#canvas {
+    /*
+    position: relative;
+    z-index: 0;
+    border: 5px solid rgb(46, 248, 255);
+    margin-left: 22%;
+    margin-top: -0%;
+    */
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 60vw;
+    height: 45vw;
+    /*
+    width: 100vw;
+    height: 70vw;
+    */
+    position: absolute;
+    top: -100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+/*width: 100%; height: 100ch;width: 200%; ---- height: 100ch; margin-left: -50%;*/
+#mute {
+    background-position: 0px 0px;
+    width: 32px;
+    height: 32px;
+    background: url(images/mute.png);
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 20em;
+
+}
+
+#mute.on {
+    background-position: -32px 0px;
+}
+
+/**************************************************/
+/* rudimentary heads up display (only used in v4) */
+/**************************************************/
+#hudP {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    top: -4vh;
+    /*background-color: rgb(194, 57, 57);*/
+    /* background-image: url("images/banner.png") no-repeat;*/
+    /*top: -5ch;*/
+
+    /* transform: translate(-50%, -100%);*/
+}
+
+#hudi {
+    /* z-index: 2;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    /*
+    position: absolute;
+   
+    border-radius: 15px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1em;
+    right: 30%;
+    top: 4.5%;
+    background-color: rebeccapurple;
+    width: 100%;
+    min-width: 300px;
+    max-width: 700px;
+    */
+
+    /* padding: 20px;*/
+
+
+
+}
+
+#conpre {
+
+    text-align: center;
+    padding-top: 5%;
+    margin-left: 32%;
+}
+
+#quest {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    background-color: rgba(98, 20, 101, 0.853);
+    border-radius: 15px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1em;
+    min-width: 300px;
+    max-width: 700px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-left: 0%;
+    margin-top: 0%;
+}
+
+#pregunta {
+    padding: 10px;
+}
+
+#imagen {
+    object-fit: cover;
+    height: 0px;
+    width: 0px;
+}
+
+.btn {
+    background: rgb(255, 255, 255);
+    /* width: 70%;*/
+    max-width: 100%;
+    padding: 15px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: PublicSans-Regular;
+    font-size: 20px;
+    color: rgb(52, 52, 52);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(128, 0, 85, 0.918);
+    color: rgb(179, 177, 177);
+
+}
+
+
+#hud .hud {
+    /*   background-color: rgba(177, 162, 162, 0.6);*/
+    padding: 5px;
+    border: 1px solid rgb(59, 8, 8);
+    margin: 0 5px;
+    /*
+    transition-property: background-color;
+    transition-duration: 2s;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 2s;*/
+    border: none;
+
+}
+
+.texto {
+
+    height: 0px;
+    width: 80px;
+    /* background-color: red;*/
+    padding: 15px;
+}
+
+#hud #speed {
+    float: right;
+}
+
+#hud #current_lap_time {
+    float: left;
+}
+
+#hud #last_lap_time {
+    float: left;
+    display: none;
+}
+
+#hud #fast_lap_time {
+    display: block;
+    width: 12em;
+    margin: 0 auto;
+    text-align: center;
+    transition-property: background-color;
+    transition-duration: 2s;
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 2s;
+}
+
+.value {
+    color: rgb(225, 255, 0);
+    font-weight: bold;
+
+}
+
+#hud .fastest {
+    background-color: rgba(244, 210, 19, 0.5);
+}
+
+.item {
+
+    width: 300px;
+    height: 225px;
+    bottom: 0%;
+    right: 0%;
+    background: transparent url(images/carga.gif) no-repeat;
+    /*images/carga.gif*/
+    display: inline-block;
+    position: absolute;
+    margin-left: 20em;
+    display: flex;
+    flex-flow: row;
+}
+
+.fin {
+    background: transparent url(images/over.png) no-repeat center center fixed;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    margin: -10px;
+    padding: 0;
+    margin-top: -4.4%;
+}
+
+.maquina {
+
+    background-size: cover;
+    margin: 0 auto;
+    left: 0%;
+    top: 0%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.front {
+    background: transparent url(images/front.png) no-repeat;
+    position: absolute;
+    background-size: cover;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+
+}

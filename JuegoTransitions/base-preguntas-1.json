@@ -1,0 +1,40 @@
+[
+   
+  
+    {
+        "categoria": "INCIERTOS",
+        "pregunta": "¿Cuándo hablamos de Transitions Signature G8 cuántos colores tenemos disponibles para toda la región NOCCA?",
+        "respuesta": "7",
+        "incorrecta1": "3",
+        "incorrecta2": "2",
+        "incorrecta3": "6"
+    },
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "Número de documento:",
+         "respuesta": "Verdadero",
+        "incorrecta1": "Falso",
+        "incorrecta2": "nop",
+        "incorrecta3": "nop",
+        "imagen": "https://puntoarcade.com/Cars2D/images/sprites.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "Las siguientes son marcas de la línea Cardio Metabólica de Eurofarma Colombia:  ",
+        "respuesta": "Verdadero",
+        "incorrecta1": "Falso",
+        "incorrecta2": "nop",
+        "incorrecta3": "nop"
+    },
+
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "Usted conoce y prescribe inhibidores de la DPP4 en su consulta diaria:  ",
+        "respuesta": "Verdadero",
+        "incorrecta1": "Falso",
+        "incorrecta2": "nop",
+        "incorrecta3": "nop"
+    }
+]

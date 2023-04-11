@@ -1,3 +1,12 @@
+<?php
+include "logica/conexion.php";
+if (isset($_GET["error"]) && $_GET["error"] == 1) {
+    $mensaje_uno = "Error 1: No se ha registrado";
+}
+if (isset($_GET["error"]) && $_GET["error"] == 2) {
+    $mensaje_dos = "Error 2: Problema de activación";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <title>Home</title>
 </head>
@@ -423,7 +433,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 ">
-                <form class="mt-3" action="operaciones/LogicaLoginExpert.php" method="POST">
+                <form class="mt-3" action="operaciones/logicaLoginExpert.php" method="POST">
                     <div class="row align-items-center">
                         <div class="col-12 mb-2">
                             <input type="text" class="form-control id" name="documento">
@@ -452,32 +462,75 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn" href="">
-                                <img src="images/form/btn_ingresar.png" class="img-fluid" alt="">
+                            <button type="submit" class="btn">
+                                <img src="images/form/btn_ingresar.png" class="img-fluid" alt="img">
                             </button>
                             <a class="link-navigation text-white d-block text-center" href="formularioActualizar.php">¿Deseas actualizar tus datos?</a>
-                                <a class="link-navigation text-white d-block text-center" href="LoginExpert.html">Si eres
-                                Experts y no estás registrado, ingresa aca</a>
+                            <a class="link-navigation text-white d-block text-center" href="registro.php">Si no estás registrado, ingresa aca</a>
                         </div>
                     </div>
-                    
                 </form>
-
             </div>
         </div>
-
     </div>
+    <?php
+    if (isset($mensaje_dos)) {
+    ?>
+    <!-- MODAL DE USUARIO INACTIVO - QUEDA -->
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: auto;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-img ">
+                                <img src="images/form/form_inactivo.png" alt="" class="img-inactivo">
+                                <button type="button" id="cerrarModal">
+                                    <img src="images/form/close.png" alt="" class="close-inactivo">
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    <?php
+    } elseif (isset($mensaje_uno)) {
+    ?>
+    <!-- MODAL DE USUARIO NO EXISTE FALTA CORREGIR -> el texto deberia de decir usted no tiene ninguna cuenta registrada -->
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/con_correcto.png" alt="" class="generado">
+                                <a href="registro.php">
+                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     <footer class="footer mb-3 pl-3">
-        <div class="row m-0">
+        <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/modal.js"></script>
     <script>
 
     </script>

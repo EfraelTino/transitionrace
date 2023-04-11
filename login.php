@@ -1,3 +1,12 @@
+<?php
+include "logica/conexion.php";
+if (isset($_GET["error"]) && $_GET["error"] == 1) {
+    $mensaje_uno = "Error 1: No se ha registrado";
+}
+if (isset($_GET["error"]) && $_GET["error"] == 2) {
+    $mensaje_dos = "Error 2: Problema de activación";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,6 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="css/modal.css">
+
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <title>Home</title>
 </head>
@@ -19,8 +31,7 @@
     <nav class="navbar justify-content-end mt-4">
         <a class="btn btn-menu mr-3 p-3 ">es</a>
         <a class="btn btn-menu mr-3 p-3 ">en</a>
-        <a class="btn btn-menu mr-3 p-0 btn-oc-modal-terminos"><img src="images/img-menu.png" class="img-fluid"
-                alt=""></a>
+        <a class="btn btn-menu mr-3 p-0 btn-oc-modal-terminos"><img src="images/img-menu.png" class="img-fluid" alt=""></a>
         <div class="row justify-content-end">
             <div class="col-12 col-md-4 div-nav-terminos">
                 <ul class="navbar-nav mr-auto ">
@@ -32,13 +43,12 @@
                             CONDICIONES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-terminos" data-toggle="modal" data-target="#modalMecanica">MECÁNICA</a>
+                        <a class="btn btn-terminos" data-toggle="modal" data-target="#modalMecanica">MECANICA</a>
                     </li>
 
                 </ul>
                 <!-- Modal terminos y condiciones-->
-                <div class="modal fade" id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header  d-block align-items-center justify-content-center">
@@ -317,28 +327,19 @@
                     </div>
                 </div>
                 <!-- Modal mecanica-->
-                <div class="modal fade" id="modalMecanica" tabindex="-1" aria-labelledby="modalMecanicaLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="modalMecanica" tabindex="-1" aria-labelledby="modalMecanicaLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title  text-white text-titulo-terminos" id="exampleModalLabel">MECANICA
                                 </h5>
-                                <button type="button" class="close btn-close text-white" data-dismiss="modal"
-                                    aria-label="Close">
-                                    <img src="images/form/close.png" alt="">
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col-12 video-container">
-                                        <video width="100%" height="auto">
-                                            <source src="video/run_transitions_Landing_aju.mp4" type="video/mp4"
-                                                autoplay="true">
-                                            Tu navegador no soporta la etiqueta de video.
-                                        </video>
-                                    </div>
-                                    <div class="col-12">
+                                    <div class="col">
                                         <img src="" alt="">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
@@ -419,34 +420,30 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                 <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
-                <img src="images/img_inicio_sesion.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
+                <img src="images/form/inicio_sesion.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
             </div>
-
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 ">
-                <form class="mt-3" action="operaciones/Login.php" method="POST">
+                <form class="mt-3" action="operaciones/logicaLogin.php" method="POST">
                     <div class="row align-items-center">
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control id" required name="documento">
+                            <input type="text" class="form-control id" name="documento">
                         </div>
                         <div class="col-12 mb-2">
                             <div class="form-check p-0">
                                 <label class="label-rombo">
                                     <input type="checkbox" class="checkbox-svg" required>
-                                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"
-                                        class="checkbox-svg-icon">
+                                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" class="checkbox-svg-icon">
                                         <g id="Layer_1">
                                             <title>Layer 1</title>
-                                            <path id="svg_2"
-                                                d="m1.1552,11.09051l4.23429,-9.92l11.29143,0l4.23428,9.92l-4.23428,9.92l-11.29143,0l-4.23429,-9.92z"
-                                                stroke-width="1" stroke="#FFFFFF" fill="none" />
-                                                <path id="svg_3" d="m7.37679,10.95527l0,0c0,-2.20914 1.62968,-4 3.64,-4l0,0c0.96539,0 1.89124,0.42143 2.57387,1.17157c0.68263,0.75015 1.06613,1.76756 1.06613,2.82843l0,0c0,2.20914 -1.62968,4 -3.64,4l0,0c-2.01032,0 -3.64,-1.79086 -3.64,-4zm3.64,-4l0,8m-3.64,-4l7.28,0" stroke-width="2" stroke="#ffffff" fill="#ffffff"class="checkbox-svg-icon-check" />
-                                                
+                                            <path id="svg_2" d="m1.1552,11.09051l4.23429,-9.92l11.29143,0l4.23428,9.92l-4.23428,9.92l-11.29143,0l-4.23429,-9.92z" stroke-width="1" stroke="#FFFFFF" fill="none" />
+                                            <path id="svg_3" d="m7.37679,10.95527l0,0c0,-2.20914 1.62968,-4 3.64,-4l0,0c0.96539,0 1.89124,0.42143 2.57387,1.17157c0.68263,0.75015 1.06613,1.76756 1.06613,2.82843l0,0c0,2.20914 -1.62968,4 -3.64,4l0,0c-2.01032,0 -3.64,-1.79086 -3.64,-4zm3.64,-4l0,8m-3.64,-4l7.28,0" stroke-width="2" stroke="#ffffff" fill="#ffffff" class="checkbox-svg-icon-check" />
+
                                         </g>
                                     </svg>
                                     <p class="form-check-label text-white p-0 m-0"> *He leído, acepto y autorizo el uso y
@@ -461,41 +458,75 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn" href="">
-                                <img src="images/form/btn_ingresar.png" class="img-fluid" alt="">
+                            <button type="submit" class="btn">
+                                <img src="images/form/btn_ingresar.png" class="img-fluid" alt="img">
                             </button>
-                            <a class="link-navigation text-white d-block text-center" href="Registro.html">Aun no tienes
-                                registro</a>
-                            <a class="link-navigation text-white d-block text-center" href="LoginExpert.html">Si eres
-                                Experts, ingresa aca</a>
+                            <a class="link-navigation text-white d-block text-center" href="formularioActualizar.php">¿Deseas actualizar tus datos?</a>
+                            <a class="link-navigation text-white d-block text-center" href="registro.php">Si no estás registrado, ingresa aca</a>
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
-
-
     </div>
-    <footer class="footer mb-3 ">
+    <?php
+    if (isset($mensaje_dos)) {
+    ?>
+    <!-- MODAL DE USUARIO INACTIVO - QUEDA -->
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: auto;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-img ">
+                                <img src="images/form/form_inactivo.png" alt="" class="img-inactivo">
+                                <button type="button" id="cerrarModal">
+                                    <img src="images/form/close.png" alt="" class="close-inactivo">
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    <?php
+    } elseif (isset($mensaje_uno)) {
+    ?>
+    <!-- MODAL DE USUARIO NO EXISTE FALTA CORREGIR -> el texto deberia de decir usted no tiene ninguna cuenta registrada -->
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/con_correcto.png" alt="" class="generado">
+                                <a href="registro.php">
+                                    <img src="images/certificado_generado/btn_continuar_2.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <footer class="footer mb-3 pl-3">
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/modal.js"></script>
     <script>
-        function openLink() {
-            // window.open("JuegoTransitions/index.html");
-            //  window.location.href = "verid.php?documento=" + documento + "&puntaje=" + puntaje+ "&preguntas=" + preguntas_correctas+"&max="+numeroMax;
-            window.location.href = "JuegoTransitions/index.html";
-        }
+
     </script>
 </body>
 

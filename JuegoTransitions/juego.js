@@ -7,7 +7,7 @@ const $hudP = document.getElementById("hudP");
 const $item = document.getElementById("item");
 const $fin = document.getElementById("fin");
 const $letras = document.getElementById("hudi");
-
+var id= document.getElementById("id_jugador").innerText;
 var windowWidth = window.innerWidth;//screen.width,window.innerWidth,document.documentElement.scrollWidth
 var windowHeight = window.innerHeight;
 var celu=false;
@@ -147,9 +147,10 @@ function recargaGAS(){
     }
 }
 function finEnviarBD() {
-    window.location.href = "verid.php?preguntas=" +preguntas_correctas + "&puntaje=" + scoreFinal+ "&vuelta=" + currentLapTime+"&id="+"Ricardo Niño";
+
+    window.location.href = "../puntuacion.php?preguntas=" +preguntas_correctas + "&puntaje=" + scoreFinal+ "&vuelta=" + currentLapTime+"&id="+id;
    //window.location.href = "../puntuacion.html";
-   window.location.href = "../puntuacion.php?preguntas=" + preguntas_correctas + "&puntaje=" + scorefinal + "&vuelta" + currentLapTime; 
+//    window.location.href = "../puntuacion.php?preguntas=" + preguntas_correctas + "&puntaje=" + scorefinal + "&vuelta" + currentLapTime; 
   
   
   }

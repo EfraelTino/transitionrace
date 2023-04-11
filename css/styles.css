@@ -76,6 +76,9 @@ body {
   background: transparent;
   min-width: 100vw;
   min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .background-video {
@@ -156,7 +159,6 @@ body {
 
 .footer {
   font-size: .8rem;
-  position: absolute;
   bottom: 0;
   margin: 0 0 0 0;
 }
@@ -170,7 +172,6 @@ body {
 
 .footer-registro {
   font-size: .8rem;
-  position: absolute;
   bottom: -40%;
   margin: 0 0 0 0;
 }

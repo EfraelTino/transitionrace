@@ -39,12 +39,12 @@ if ($row > 0) {
         header("location: ../Instrucciones.php?q=" . $encoded_query_string);
     } else {
         // PARA LA ACTIVACION
-        header("Location: ../loginexpert.php?error=2");
+        header("Location: ../login.php?error=2");
         exit();
     }
 } else {
     // NO SE A REGISTRADO
-    header("Location: ../loginexpert.php?error=1");
+    header("Location: ../login.php?error=1");
         exit();
 }
 $stmt = $dblink->prepare("UPDATE `clientestra` SET 

@@ -1,7 +1,16 @@
 <?php
 include "logica/conexion.php";
-$documento = $_GET['documento'];
-$tipo = $_GET['tipo'];
+$documento='';
+$tipo='';
+$veces='';
+$id='';
+$decoded_query_string=$_GET['q'];
+$query_string_decoded=base64_decode($decoded_query_string);
+parse_str($query_string_decoded, $params);
+$documento = $params['documento'];
+$tipo = $params['tipo'];
+$veces = $params['veces'];
+$id=$params['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -458,7 +467,30 @@ $tipo = $_GET['tipo'];
         function openLink() {
             // window.open("JuegoTransitions/index.html");
             //  window.location.href = "verid.php?documento=" + documento + "&puntaje=" + puntaje+ "&preguntas=" + preguntas_correctas+"&max="+numeroMax;
-            window.location.href = "JuegoTransitions/index.php<?php echo '?documento=' . $documento . "&tipo=" . $tipo; ?> ";
+            <?php
+            $sql = mysqli_query($dblink, "SELECT * FROM clientestra WHERE documento ='$documento' ") or die(mysqli_error($link));
+            $row = mysqli_num_rows($sql);
+            if ($row > 0) {
+                $array = mysqli_fetch_array($sql);
+                $id = $array['id'];
+                $veces = $array['veces'];
+                $veces++;
+                $stmt = $dblink->prepare("UPDATE `clientestra` SET `veces` = ? WHERE `id` = ?");
+                if (!$stmt) {
+                    echo "error";
+                }
+                $stmt->bind_param('ii', $veces, $id);
+                $stmt->execute();
+            }
+            $query_string=http_build_query([
+                "id" => $id,
+                "documento" =>$documento,
+                "tipo" =>$tipo,
+                "veces" =>$veces
+            ]);
+            $encoded_query_string=base64_encode($query_string);
+            ?>
+            window.location.href = "JuegoTransitions/index.php<?php echo '?q='.$encoded_query_string;?> ";
         }
     </script>
 </body>

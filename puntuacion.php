@@ -1,6 +1,35 @@
 <?php
-$puntaje = $_GET['puntaje'];
+require "logica/conexion.php";
+$preguntas_correctas = $_GET['preguntas'];
+$scoreFinal = $_GET['puntaje'];
+$currentLapTime = $_GET['vuelta'];
+$id = $_GET['id'];
 
+// setear las palabras resevadas o caracteres especiales
+$sql = mysqli_query($dblink, "SELECT * FROM clientestra WHERE id ='$id' ") or die(mysqli_error($link));
+$row = mysqli_num_rows($sql);
+$puntuacion_db = 0; 
+if ($row) {
+    $array = mysqli_fetch_array($sql);
+    $puntuacion_db = $array['puntuacion'];
+    if ($scoreFinal > $puntuacion_db) {
+        $stmt = $dblink->prepare("UPDATE `clientestra` SET 
+    `puntuacion` = ?, 
+    `preguntas` = ? 
+    WHERE id = ?");
+        if (!$stmt) {
+            echo "error";
+        }
+        $stmt->bind_param(
+            'sss',
+            $scoreFinal,
+            $preguntas_correctas,
+            $id
+        );
+        $stmt->execute();
+        $stmt->close();
+    }
+}
 
 ?>
 
@@ -44,7 +73,7 @@ $puntaje = $_GET['puntaje'];
                         <div class="contenedor-puntos">
                             <img src="images/cont-puntos.png" alt="">
                             <p class="puntos-text text-center p-0 m-0"><strong>PUNTOS</strong></p>
-                            <h2 class="text-center cantidad-puntos p-0 m-0"><strong><?php echo $puntaje; ?></strong></h2>
+                            <h2 class="text-center cantidad-puntos p-0 m-0"><strong><?php echo $scoreFinal; ?></strong></h2>
                             <p class="text-center puesto-text p-0 m-0 "><strong>Puesto</strong></p>
                             <h2 class="text-center cantidad-puesto p-0 m-0 "><strong>29</strong></h2>
 
@@ -54,7 +83,8 @@ $puntaje = $_GET['puntaje'];
                         <img src="images/puntuacion_final/3.png" class="img-fluid text-center d-lg-none" alt="">
                         <div class="contenedor-puntos">
                             <p class="puntos-text-1 text-center p-0 m-0 d-none d-lg-block">PUNTOS</p>
-                            <h2 class="text-center cantidad-puntos-1 p-0 m-0 d-none d-lg-block"><?php echo $puntaje; ?></h2>
+                            <h2 class="text-center cantidad-puntos-1 p-0 m-0 d-none d-lg-block">
+                                <?php echo $scoreFinal > $puntuacion_db ? $scoreFinal : $puntuacion_db;?></h2>
                             <p class="text-center puesto-text-1 p-0 m-0 d-none d-lg-block">Puesto</p>
                             <h2 class="text-center cantidad-puesto-1 p-0 m-0 d-none d-lg-block">29</h2>
                             <img src="images/puntuacion_final/3.png" alt="Imagen" class="d-none d-lg-block">
@@ -85,7 +115,15 @@ $puntaje = $_GET['puntaje'];
     </footer>
     <script>
         function openLink() {
-            window.open("puntuacion_final.html", "_self");
+            window.open("puntuacion_final.php", "_self");
+            <?php 
+            $query_string=http_build_query([
+                "id" =>$id,
+            ]);
+            $encode_query_string = base64_encode($query_string);
+
+            ?>
+            window.location.href="puntuacion_final.php<?php echo '?q='.$encode_query_string?>";
         }
     </script>
 </body>

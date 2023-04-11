@@ -1,29 +1,19 @@
-<?php 
+<?php
 
 include "../logica/conexion.php";
 
-$nombre=$_GET['nombre'];
-$optica = $_GET['nombreoptica'];
-$correo=$_GET['email'];
-$telefono=$_GET['celular'];
-$documento=$_GET['identificacion'];
-$encargado=$_GET['token'];
+$nombre = $_GET['nombre'];
+$optica = $_GET['optica'];
+$correo = $_GET['email'];
+$telefono = $_GET['celular'];
+$documento = $_GET['identificacion'];
+$encargado = $_GET['encargado'];
+$sql_select = mysqli_query($dblink, "SELECT * FROM clientestra WHERE documento='$documento'") or die(mysqli_error($link));
 
-echo "NOMBRE: ".$nombre. " OPTICA: ".$optica. " CORREO: ".$correo. " TELEFONO: ".$telefono ."DOCUMENTO: " . $documento . " ENCARGADO: ". $encargado;
-
-// $sql = "UPDATE clientestra SET nombreusaurio='$nombre', nombrecliente='$optica', emailusuario='$correo', documento = '$documento', email='$encargado'";
-// $ejec=  mysqli_query($dblink, $sql);
-// if ($ejec_consulta) {
-//     echo "<script>
-// 					alert('Datos actualizados de manera Correcta');
-// 					window.location= '../index.html';
-// 				</script>
-// 			";
-// }else{
-//     echo "<script>
-// 					alert('Error al Actualizar Registro');
-// 					window.history.back();
-// 				</script>
-// 			";
-// }
-
+$row = mysqli_num_rows($sql_select);
+if ($row > 0){
+	$sql_update = mysqli_query($dblink, "UPDATE clientestra SET nombreusaurio='$nombre', nombreusaurio='$optica', nombreusaurio='$correo', telefono='$telefono', nombreusaurio='$encargado' WHERE documento='$documento'") or die(mysqli_error($link));
+	header("Location: ../actualizarDatos.php?estado=1");
+}else{
+	echo "Error";
+}

@@ -1,3 +1,12 @@
+<?php
+include "logica/conexion.php";
+if (isset($_GET["error"]) && $_GET["error"] == 1) {
+    $mensaje = "Error 1: No se ha registrado";
+}
+if (isset($_GET["error"]) && $_GET["error"] == 2) {
+    $mensaje2 = "Error 2: Problema de activación";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
     <title>Home</title>
 </head>
 
@@ -18,8 +28,7 @@
     <nav class="navbar justify-content-end mt-4">
         <a class="btn btn-menu mr-3 p-3 ">es</a>
         <a class="btn btn-menu mr-3 p-3 ">en</a>
-        <a class="btn btn-menu mr-3 p-0 btn-oc-modal-terminos"><img src="images/img-menu.png" class="img-fluid"
-                alt=""></a>
+        <a class="btn btn-menu mr-3 p-0 btn-oc-modal-terminos"><img src="images/img-menu.png" class="img-fluid" alt=""></a>
         <div class="row justify-content-end">
             <div class="col-12 col-md-4 div-nav-terminos">
                 <ul class="navbar-nav mr-auto ">
@@ -36,8 +45,7 @@
 
                 </ul>
                 <!-- Modal terminos y condiciones-->
-                <div class="modal fade" id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="modalTerminos" tabindex="-1" aria-labelledby="modalTerminosLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header  d-block align-items-center justify-content-center">
@@ -316,8 +324,7 @@
                     </div>
                 </div>
                 <!-- Modal mecanica-->
-                <div class="modal fade" id="modalMecanica" tabindex="-1" aria-labelledby="modalMecanicaLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="modalMecanica" tabindex="-1" aria-labelledby="modalMecanicaLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -410,153 +417,124 @@
             </div>
         </div>
     </nav>
-    <div class="container d-none d-lg-block">
+    <div class="container">
         <div class="row">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                 <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
-                <img src="images/gran_carrera1.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
+                <img src="images/form/title_inicio_experts.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
             </div>
         </div>
-
-        <div class="container-sd">
-            <div class="col-12 d-flex justify-content-center">
-                <div class="contenedor-puntos">
-                    <img src="images/puntuacion_final/puntuacion.png" alt="Imagen">
-                </div>
-            </div>
-            <form action="">
-                <div class="form1">
-                    <div class="col-12 m-0 p-0">
-                        <input type="text" class="form-controls id-1">
-                    </div>
-                    <div class="col-12 m-0 p-0">
-                        <input type="text" class="form-controls id-2">
-                    </div>
-                    <div class="col-12 m-0 p-0">
-                        <input type="text" class="form-controls id-3">
-                    </div>
-                    <div class="col-12 m-0 p-0">
-                        <input type="text" class="form-controls id-4">
-                    </div>
-                    <div class="col-12 m-0 p-0">
-                        <input type="text" class="form-controls id-5">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6 m-0 p-0">
-                        <button type="button" data-toggle="modal" data-target="#modalFormEnviado" class="btn">
-                            <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
-                        </button>
-                    </div>
-                    <div class="col-6 m-0 p-0">
-                        <button type="button" data-toggle="modal" data-target="#modalFormEnviado" class="btn">
-                            <img src="images/form/btn_omitir.png" class="img-fluid" alt="">
-                        </button>
-                    </div>
-                </div>
-                <div class="modal fade" id="modalFormEnviado" tabindex="-1" aria-labelledby="modalFormEnviadoLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content resp">
-                            <div class="modal-body ">
-                                <div class=" d-flex justify-content-center align-items-center">
-                                    <div class="cont-img ">
-                                        <img src="images/form/form-enviado.png" class="img-inactivo" alt="">
-                                        <a class="btn_cerrar" href="ranking.html" >
-                                            <img src="images/form/close.png" alt=""  class="close-inactivo">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-    </div>
-    
-    <div class="container d-lg-none">
         <div class="row">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
-                <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
-                <img src="images/gran_carrera1.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
+                <img src="images/essilor_nuevo_logo_experts.png" alt="">
             </div>
+
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 ">
-                <form class="mt-3" action="">
+                <form class="mt-3" action="operaciones/logicaLoginExpert.php" method="POST">
                     <div class="row align-items-center">
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control id-1">
+                            <input type="text" class="form-control id" name="documento">
                         </div>
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control id-2">
-                        </div>
+                            <div class="form-check p-0">
+                                <label class="label-rombo">
+                                    <input type="checkbox" class="checkbox-svg" required>
+                                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" class="checkbox-svg-icon">
+                                        <g id="Layer_1">
+                                            <title>Layer 1</title>
+                                            <path id="svg_2" d="m1.1552,11.09051l4.23429,-9.92l11.29143,0l4.23428,9.92l-4.23428,9.92l-11.29143,0l-4.23429,-9.92z" stroke-width="1" stroke="#FFFFFF" fill="none" />
+                                            <path id="svg_3" d="m7.37679,10.95527l0,0c0,-2.20914 1.62968,-4 3.64,-4l0,0c0.96539,0 1.89124,0.42143 2.57387,1.17157c0.68263,0.75015 1.06613,1.76756 1.06613,2.82843l0,0c0,2.20914 -1.62968,4 -3.64,4l0,0c-2.01032,0 -3.64,-1.79086 -3.64,-4zm3.64,-4l0,8m-3.64,-4l7.28,0" stroke-width="2" stroke="#ffffff" fill="#ffffff" class="checkbox-svg-icon-check" />
 
-                        <div class="col-12 mb-2">
-                            <input type="email" class="form-control id-3">
-                        </div>
-
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control id-4">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control id-5">
-                        </div>
-                        <div class="col-6 m-0 p-0">
-                            <button type="button" data-toggle="modal" data-target="#modalFormEnviado1" class="btn">
-                                <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
-                            </button>
-                        </div>
-                        <div class="col-6 m-0 p-0">
-                            <button type="button" data-toggle="modal" data-target="#modalFormEnviado1" class="btn">
-                                <img src="images/form/btn_omitir.png" class="img-fluid" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <!-- Modal form-enviado-->
-                <div class="modal fade" id="modalFormEnviado1" tabindex="-1" aria-labelledby="modalFormEnviadoLabel1"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content resp">
-                            <div class="modal-body ">
-                                <div class=" d-flex justify-content-center align-items-center">
-                                    <div class="cont-img ">
-                                        <img src="images/form/form-enviado.png" class="img-inactivo" alt="">
-                                        <a href="ranking.html" >
-                                            <img src="images/form/close.png" alt=""  class="close-inactivo">
-                                        </a>
-                                    </div>
-                                </div>
-
-
+                                        </g>
+                                    </svg>
+                                    <p class="form-check-label text-white p-0 m-0"> *He leído, acepto y autorizo el uso y
+                                        tratamiento de mis datos personales de
+                                        conformidad con la <span style="text-decoration: underline;">Política de
+                                            Tratamiento de Datos, Términos y condiciones</span> del
+                                        Grupo ESSILOR Latinoameria.</p>
+                                </label>
                             </div>
+                        </div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn" href="">
+                                <img src="images/form/btn_ingresar.png" class="img-fluid" alt="">
+                            </button>
+                            <a class="link-navigation text-white d-block text-center" href="formularioActualizar.php">¿Deseas actualizar tus datos?</a>
+                            <a class="link-navigation text-white d-block text-center" href="registro.php">Si eres
+                                Experts y no estás registrado, ingresa aca</a>
                         </div>
                     </div>
-                </div>
-                </form>
-            </div>
-        </div>
 
-    </div>
-    <footer class="footer  pl-3 ">
-        <div class="row m-0 p-0">
-            <div class="col">
-                <p class="m-0 text-footer">Copyright © 2022 Essilor Latinoamérica - Todos los derechos
-                    reservados.</p>
+                </form>
+
             </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1  /dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    </div>
+    <?php
+    if (isset($mensaje)) {
+    ?>
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: auto;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-img ">
+                                <img src="images/form/form_inactivo.png" alt="" class="img-inactivo">
+                                <button type="button" id="cerrarModal">
+                                    <img src="images/form/close.png" alt="" class="close-inactivo">
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    <?php
+    } elseif (isset($mensaje2)) {
+    ?>
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: auto;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/con_correcto.png" alt="" class="generado">
+                                <a href="registro.php">
+                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+    <footer class="footer mb-3 pl-3">
+        <div class="row m-0">
+            <div class="col">
+                <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/modal.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

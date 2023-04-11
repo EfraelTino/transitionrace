@@ -1,3 +1,19 @@
+<?php 
+include "logica/conexion.php";
+$id='';
+$query_string=$_GET['q'];
+$decode_query_string= base64_decode($query_string);
+parse_str($decode_query_string, $params);
+$id= $params['id'];
+
+$sql= mysqli_query($dblink, "SELECT * FROM clientestra WHERE id='$id'") or die(mysqli_error($link));
+$row = mysqli_fetch_assoc($sql);
+$nombre = $row['nombreusaurio'];
+$documento=$row['documento'];
+$tipo=$row['tipo'];
+$veces=$row['veces'];
+$id=$row['id'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -583,7 +599,7 @@
                     <div class="col-12">
                         <div class="col-12 d-flex justify-content-center texto-nombre">
                             <img src="images/ranking/leonardo.png" class="img-fluid text-center" alt="">
-                            <p class="texto-nombre-usuario">LEONARDO</p>
+                            <p class="texto-nombre-usuario"><?php echo $nombre?></p>
                         </div>
                     </div>
 
@@ -608,9 +624,17 @@
     </footer>
     <script>
         function openLink() {
-           // window.open("JuegoTransitions/index.html");
-          //  window.location.href = "verid.php?documento=" + documento + "&puntaje=" + puntaje+ "&preguntas=" + preguntas_correctas+"&max="+numeroMax;
-          window.location.href ="Instrucciones.html";
+           <?php
+            
+            $query_string = http_build_query([
+                "id" => $id,
+                "documento" => $documento,
+                "tipo" => $tipo,
+                "veces" => $veces,
+            ]);
+            $encoded_query_string=base64_encode($query_string);
+            ?>
+          window.location.href ="seguridad.php<?php echo '?q='.$encoded_query_string; ?>";
         }
     </script>
 </body>

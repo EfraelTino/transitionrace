@@ -1,17 +1,11 @@
 <?php
-include "logica/conexion.php";
-$documento='';
-$tipo='';
-$veces='';
-$id='';
-$decoded_query_string = $_GET["q"];
-$query_string_decoded = base64_decode($decoded_query_string);
-parse_str($query_string_decoded, $params);
+require "logica/conexion.php";
+$id = '';
+$decode_query_string = $_GET['q'];
 
-$documento = $params['documento'];
-$tipo = $params['tipo'];
-$veces=$params['veces'];
-$id=$params['id'];
+$query_decode = base64_decode($decode_query_string);
+parse_str($query_decode, $params);
+$id = $params['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +16,6 @@ $id=$params['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="images/favicon.ico" />
     <title>Home</title>
 </head>
 
@@ -35,7 +28,7 @@ $id=$params['id'];
         <a class="btn btn-menu mr-3 p-3 ">es</a>
         <a class="btn btn-menu mr-3 p-3 ">en</a>
         <a class="btn btn-menu mr-3 p-0 btn-oc-modal-terminos"><img src="images/img-menu.png" class="img-fluid" alt=""></a>
-        <div class="row justify-content-end m-0 p-0 ">
+        <div class="row justify-content-end m-0 p-0">
             <div class="col-12 col-md-4 div-nav-terminos">
                 <ul class="navbar-nav mr-auto ">
                     <li class="nav-item">
@@ -336,19 +329,13 @@ $id=$params['id'];
                             <div class="modal-header">
                                 <h5 class="modal-title  text-white text-titulo-terminos" id="exampleModalLabel">MECANICA
                                 </h5>
-                                <button type="button" class="close btn-close text-white" data-dismiss="modal" aria-label="Close">
-                                    <img src="images/form/close.png" alt="">
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="row m-0 p-0">
-                                    <div class="col-12 video-container">
-                                        <video width="100%" height="auto">
-                                            <source src="video/run_transitions_Landing_aju.mp4" type="video/mp4" autoplay="false">
-                                            Tu navegador no soporta la etiqueta de video.
-                                        </video>
-                                    </div>
-                                    <div class="col-12">
+                                <div class=" row m-0 p-0">
+                                    <div class="col">
                                         <img src="" alt="">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
@@ -429,76 +416,156 @@ $id=$params['id'];
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container d-none d-lg-block">
         <div class="row m-0 p-0">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                 <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
-                <img src="images/img_instrucciones.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
+                <img src="images/gran_carrera1.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
             </div>
+        </div>
 
+        <div class="container-sd">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="contenedor-puntos">
+                    <img src="images/puntuacion_final/puntuacion.png" alt="Imagen">
+                </div>
+            </div>
+            <form action="operaciones/logicaPuntuacionFinal.php" method="POST">
+                <div class="form1">
+                    <input hidden value="<?php echo $id; ?>" name="id">
+                    <div class="col-12 m-0 p-0">
+
+                        <input type="text" class="form-controls id-1" name="dato1">
+                    </div>
+                    <div class="col-12 m-0 p-0">
+                        <input type="text" class="form-controls id-2" name="dato2">
+                    </div>
+                    <div class="col-12 m-0 p-0">
+                        <input type="text" class="form-controls id-3" name="dato3">
+                    </div>
+                    <div class="col-12 m-0 p-0">
+                        <input type="text" class="form-controls id-4" name="dato4">
+                    </div>
+                    <div class="col-12 m-0 p-0">
+                        <input type="text" class="form-controls id-5" name="dato5">
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0">
+                        <button type="submit" class="btn">
+                            <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
+                        </button>
+                        <!-- HABILITAR MODAL en button :  data-toggle="modal" data-target="#modalFormEnviado"  -->
+                    </div>
+                    <div class="col-6 m-0 p-0">
+                        <button type="button" data-toggle="modal" data-target="#modalFormEnviado" class="btn">
+                            <img src="images/form/btn_omitir.png" class="img-fluid" alt="">
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="modal fade" id="modalFormEnviado" tabindex="-1" aria-labelledby="modalFormEnviadoLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content resp">
+                            <div class="modal-body ">
+                                <div class=" d-flex justify-content-center align-items-center">
+                                    <div class="cont-img ">
+                                        <img src="images/form/form-enviado.png" class="img-inactivo" alt="">
+                                        <a class="btn_cerrar" href="ranking.html" >
+                                            <img src="images/form/close.png" alt=""  class="close-inactivo">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+            </form>
         </div>
-        <div class="row justify-content-center flex-wrap m-0 p-0">
-            <div class="col-12 col-md d-flex justify-content-center align-items-center flex-column">
-                <img src="images/instrucciones/01.png" class="img-fluid" alt="">
-                <p class="text-white text-center text-instrucciones">Cada numero para jugar (token) tiene derecho a una
-                    única oportunidad con su numero xxx de vidas, no recargues ni salgas de la carrera hasta terminar el
-                    juego o perderás tu oportunidad.</p>
-            </div>
-            <div class="col-12 col-md d-flex justify-content-center align-items-center flex-column">
-                <img src="images/instrucciones/02.png" class="img-fluid" alt="">
-                <p class="text-white text-center text-instrucciones">Utiliza las flechas de tu teclado para ir de
-                    derecha, izquierda, adelante o atrás, esquivando los otros vehículos y recogiendo la mayor cantidad
-                    Incentivos.</p>
-            </div>
-            <div class="col-12 col-md d-flex justify-content-center align-items-center flex-column">
-                <img src="images/instrucciones/03.png" class="img-fluid" alt="">
-                <p class="text-white text-center text-instrucciones">Recoge la mayor cantidad de Logos Transitions® Run
-                    para tener mayor puntaje RESPONDIENDO LAS PREGUNTAS de forma correcta.</p>
-            </div>
-            <div class="col-12 col-md d-flex justify-content-center align-items-center flex-column">
-                <img src="images/instrucciones/04.png" class="img-fluid" alt="">
-                <p class="text-white text-center text-instrucciones">Recoge la mayor cantidad de Lentes Transitions® Run
-                    Para recargar de combustible tu vehículo y mantenerte el mayor tiempo en carrera</p>
-            </div>
-            <div class="col-12 col-md d-flex justify-content-center align-items-center flex-column">
-                <img src="images/instrucciones/05.png" class="img-fluid" alt="">
-                <p class="text-white text-center text-instrucciones">Recoge la mayor cantidad de Nitro Transitions® Run
-                    para acelerar tu vehículo y mantenerte el mayor tiempo en carrera</p>
-            </div>
-        </div>
+
+    </div>
+
+    <div class="container d-lg-none">
         <div class="row m-0 p-0">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
-                <button type="submit" class="btn" href="" id="boton" onclick="openLink();">
-                    <img src="images/form/btn_iniciar.png" class="img-fluid" alt="">
-                </button>
+                <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
+                <img src="images/gran_carrera1.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
             </div>
         </div>
+        <div class="row  m-0 p-0 justify-content-center">
+            <div class="col-12 col-md-5 ">
+                <form class="mt-3" action="operaciones/logicaPuntuacionFinal.php" method="POST">
+                    <div class="row align-items-center m-0 p-0">
+                        <input hidden value="<?php echo $id; ?>" name="id">
+                        <div class="col-12 mb-2">
+                            <input type="text" class="form-control id-1" name="dato1">
+                        </div>
+                        <div class="col-12 mb-2">
+                            <input type="text" class="form-control id-2" name="dato2">
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <input type="text" class="form-control id-3" name="dato3">
+                        </div>
+
+                        <div class="col-12 mb-2">
+                            <input type="text" class="form-control id-4" name="dato4">
+                        </div>
+                        <div class="col-12 mb-2">
+                            <input type="text" class="form-control id-5" name="dato5">
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <button type="submit" class="btn">
+                                <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
+                            </button>
+                            <!-- ABRIIR MODAL: data-toggle="modal" data-target="#modalFormEnviado1"  -->
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <button type="button" data-toggle="modal" data-target="#modalFormEnviado1" class="btn">
+                                <img src="images/form/btn_omitir.png" class="img-fluid" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Modal form-enviado-->
+                <!-- <div class="modal fade" id="modalFormEnviado1" tabindex="-1" aria-labelledby="modalFormEnviadoLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content resp">
+                            <div class="modal-body ">
+                                <div class=" d-flex justify-content-center align-items-center">
+                                    <div class="cont-img ">
+                                        <img src="images/form/form-enviado.png" class="img-inactivo" alt="">
+                                        <a href="ranking.html">
+                                            <img src="images/form/close.png" alt="" class="close-inactivo">
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+                </form>
+            </div>
+        </div>
+
     </div>
-    <footer class="footer mb-3 ">
+    <footer class="footer  pl-3 ">
         <div class="row m-0 p-0">
             <div class="col">
-                <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>
+                <p class="m-0 text-footer">Copyright © 2022 Essilor Latinoamérica - Todos los derechos
+                    reservados.</p>
             </div>
         </div>
+            
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1  /dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
-    <script>
-        function openLink() {
-            // window.open("JuegoTransitions/index.html");
-            //  window.location.href = "verid.php?documento=" + documento + "&puntaje=" + puntaje+ "&preguntas=" + preguntas_correctas+"&max="+numeroMax;
-            <?php $query_string= http_build_query([
-                "id" => $id,
-                "documento" => $documento,
-                "tipo" => $tipo,
-                "veces" => $veces,
-            ]);
-            $encoded_query_string=base64_encode($query_string);?>
-            window.location.href = "seguridad.php<?php echo '?q=' .$encoded_query_string;?>";
-        }
-    </script>
 </body>
 
 </html>

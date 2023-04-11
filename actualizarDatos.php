@@ -22,6 +22,9 @@ $telefono = $params["telefono"];
 $encargado = $params["encargado"];
 $nombreusuario = $params["nombreusuario"];
 
+if (isset($_GET['estado']) && $_GET['estado'] == 1) {
+    $mensaje = "Datos actualizados";
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,6 +35,7 @@ $nombreusuario = $params["nombreusuario"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Home</title>
 </head>
 
@@ -456,7 +460,7 @@ $nombreusuario = $params["nombreusuario"];
                             <input type="text" class="form-control nombre" required name="nombre" value="<?php echo $nombreusuario; ?>">
                         </div>
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control optica" required name="nombreoptica" value="<?php echo $optica; ?>" disabled>
+                            <input type="text" class="form-control optica" name="optica" value="<?php echo $optica; ?>">
                         </div>
                         <div class="col-12 mb-2">
                             <input type="email" class="form-control email" required name="email" value="<?php echo $emailusuario; ?>">
@@ -475,7 +479,7 @@ $nombreusuario = $params["nombreusuario"];
                             padding-top: 0.2em;">Quien me atiende en el laboratorio</p>
                         </div>
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control my-3 nombre-2" required name="encargado" value="<?php echo $encargado; ?>" disabled>
+                            <input type="text" class="form-control id" required name="encargado" value="<?php echo $encargado; ?>" readonly>
                         </div>
                         <div class="col-12 mb-2">
                             <div class="form-check p-0">
@@ -509,27 +513,6 @@ $nombreusuario = $params["nombreusuario"];
                             <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="LoginExpert.php">Si eres
                                 Experts, ingresa aca</a>
                         </div>
-                    <!-- ABRIR MODAL -->
-                    </div>
-                    <!-- Modal form-enviado-->
-                    <div class="modal fade" id="modalFormEnviado" tabindex="-1" aria-labelledby="modalFormEnviadoLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content resp">
-
-                                <div class="modal-body ">
-                                    <div class=" d-flex justify-content-center align-items-center">
-                                        <div class="cont-img ">
-                                            <img src="images/form/form_inactivo.png" alt="" class="img-inactivo">
-                                            <button type="submit">
-                                                <img src="images/form/close.png" alt="" class="close-inactivo">
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
                 </form>
             </div>
@@ -538,6 +521,27 @@ $nombreusuario = $params["nombreusuario"];
             <input type="text" class="form-control my-3 token" required value="<?php echo $token; ?>" name="token" disabled>
         </div>
     </div>
+    <?php
+    if (isset($mensaje)) {
+    ?>
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/con_correcto.png" alt="" class="generado">
+                                <a href="registro.php">
+                                    <img src="images/certificado_generado/btn_continuar_2.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     <footer class="footer-registro  pl-3 ">
         <div class="row m-0 p-0">
             <div class="col">
@@ -552,6 +556,7 @@ $nombreusuario = $params["nombreusuario"];
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/modal.js"></script>
     <script>
         function cerrarModal() {
             const $modal = document.getElementById("modalFormEnviado");

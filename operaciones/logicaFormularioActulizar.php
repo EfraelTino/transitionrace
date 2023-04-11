@@ -70,10 +70,8 @@ else if ($documento && ($token == "" || null)) {
         $encoded_query_string = base64_encode($query_string);
         header("location: ../actualizarDatos.php?q=" . $encoded_query_string);
     }else{
-        echo "<script>
-        alert('INGRESE UNA IDENTIFICACION VALIDA, SI NO SEA A REGISTRADO, REGISTRESE');
-        window.history.back();
-         </script>
-        ";
+        header("Location: ../formularioActualizar.php?estado=0");
+        exit();
+
     }
 }

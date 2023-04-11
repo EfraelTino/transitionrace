@@ -1,0 +1,33 @@
+.cont-certificado {
+    position: relative;
+}
+
+.generado {
+    width: 280px;
+}
+.continuar-generado {
+    width: 160px;
+}
+
+.cont-certificado>a {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 75%;
+    left: 23%;
+}
+@media  (min-width: 576px) {
+    .cont-certificado>a {
+        top: 77% !important;
+        left: 25%;
+    }
+    .generado {
+        width: 480px !important;
+    }
+
+
+    .continuar-generado {
+        width: 260px !important;
+    }
+
+}

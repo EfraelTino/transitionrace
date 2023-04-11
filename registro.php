@@ -1,14 +1,18 @@
 <?php
 include "logica/conexion.php";
-$id = '';
-$token = '';
-$documento = '';
-$tipo='';
-if(isset($_GET['tipo'])){
-    $tipo= $_GET['tipo'];
+if (isset($_GET['estado']) && $_GET['estado'] == 1) {
+    $mensaje_uno = "USTED YA SE ENCUENTRA REGISTRADO, YA PUEDE INICIAR SESION Y REDIRIGI A loginExpert";
 }
-
-echo $tipo;
+if (isset($_GET['estado']) && $_GET['estado'] == 2) {
+    $mensaje_dos = "USTED YA SE ENCUENTRA REGISTRADO, YA PUEDE INICIAR SESION Y REDIRIGE A login normal";
+}
+if (isset($_GET['estado']) && $_GET['estado'] == 3) {
+    $mensaje_tres = "Los datos se han registrado de manera exitosa, espere que su cuenta sea verificada y activada para inciar sesión";
+}
+if (isset($_GET['estado']) && $_GET['estado'] == 4) {
+    $_mensaje_cuatro = "SE A REGISTRADO A USUARIO *OTRO* CON TIPO= 0');
+    window.location= '../login.php";
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,6 +23,7 @@ echo $tipo;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Home</title>
 </head>
 
@@ -436,9 +441,8 @@ echo $tipo;
         </div>
         <div class="row m-0 p-0 justify-content-center">
             <div class="col-12 col-md-5 ">
-                <form class="mt-3" action="operaciones/Registro.php" method="GET">
+                <form class="mt-3" action="operaciones/logicaregistro.php" method="GET">
                     <div class="row m-0 p-0 align-items-center">
-                        <input type="hidden" value="<?php echo $id; ?>" name="id">
                         <div class="col-12 mb-2">
                             <input type="text" class="form-control nombre" required name="nombre">
                         </div>
@@ -454,10 +458,10 @@ echo $tipo;
                             <input type="text" class="form-control celular" required name="celular">
                         </div>
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control id" required name="identificacion" value="<?php echo $documento; ?>">
+                            <input type="text" class="form-control id" required name="identificacion">
                         </div>
                         <div class="col-12 mb-2">
-                            <input type="text" class="form-control my-3 token" required value="<?php echo $token; ?>" name="token">
+                            <input type="text" class="form-control my-3 token" required name="token">
                         </div>
                         <div class="col-12 mb-2 text-container">
                             <p class="text-white form-check-label text-center" class="quien" style="text-decoration: overline;
@@ -470,7 +474,7 @@ echo $tipo;
                         <div class="col-12 mb-2">
                             <div class="form-check p-0">
                                 <label class="label-rombo">
-                                    <input type="checkbox" class="checkbox-svg">
+                                    <input type="checkbox" class="checkbox-svg" required>
                                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" class="checkbox-svg-icon">
                                         <g id="Layer_1">
                                             <title>Layer 1</title>
@@ -491,41 +495,110 @@ echo $tipo;
                     </div>
                     <div class="row m-0 p-0">
                         <div class="col-12">
-                            <button type="button" data-toggle="modal" data-target="#modalFormEnviado" class="btn">
+                            <button type="submit" class="btn">
                                 <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
                             </button>
-                            <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="Login.php">Ya tienes
+                            <!-- abrir modal data-toggle="modal" data-target="#modalFormEnviado" -->
+                            <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="login.php">Ya tienes
                                 registro</a>
-                            <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="LoginExpert.php">Si eres
+                            <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="loginexpert.php">Si eres
                                 Experts, ingresa aca</a>
                         </div>
 
                     </div>
-                    <!-- Modal form-enviado-->
-                    <div class="modal fade" id="modalFormEnviado" tabindex="-1" aria-labelledby="modalFormEnviadoLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content resp">
-
-                                <div class="modal-body ">
-                                    <div class=" d-flex justify-content-center align-items-center">
-                                        <div class="cont-img ">
-                                            <img src="images/form/form_inactivo.png" alt="" class="img-inactivo">
-                                            <button type="submit">
-                                                <img src="images/form/close.png" alt="" class="close-inactivo">
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>
-
     </div>
+    <?php
+    if (isset($mensaje_uno)) {
+    ?>
+        <!-- Modal form-enviado-->
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: auto;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/ya_se_encuentra.png" alt="" class="generado">
+                                <a href="loginexpert.php">
+                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    <?php } elseif (isset($mensaje_dos)) {
+    ?>
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/ya_se_encuentra.png" alt="" class="generado">
+                                <a href="login.php">
+                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    <?php
+    } elseif (isset($mensaje_tres)) { ?>
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                    <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/verificar_cuenta.png" alt="" class="generado">
+                                <a href="login.php">
+                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    <?php } elseif (isset($_mensaje_cuatro)) { ?>
+        <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: none !important;">
+                <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                        <div class=" d-flex justify-content-center align-items-center">
+                            <div class="cont-certificado">
+                                <img src="images/certificado_generado/verificar_cuenta.png" alt="" class="generado">
+                                <a href="login.php">
+                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    <?php } ?>
     <footer class="footer-registro  pl-3 ">
         <div class="row m-0 p-0">
             <div class="col">
@@ -540,12 +613,7 @@ echo $tipo;
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
-    <script>
-        function cerrarModal() {
-            const $modal = document.getElementById("modalFormEnviado");
-            $front.style.display = "none";
-        }
-    </script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

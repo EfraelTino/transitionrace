@@ -1,3 +1,10 @@
+<?php
+include "logica/conexion.php";
+if(isset($_GET['estado']) && $_GET['estado'] == 0){
+    $mensaje="Por favor, ingrese una identificación válida. Si no se ha registrado aún, por favor, regístrese.";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <title>Home</title>
 </head>
@@ -459,11 +467,31 @@
                     </div>
                     
                 </form>
-
             </div>
         </div>
-
     </div>
+    <?php
+    if (isset($mensaje)) {
+        ?>
+        <!-- MODAL DE USUARIO NO EXISTE FALTA CORREGIR -> el texto deberia de decir usted no tiene ninguna cuenta registrada -->
+            <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style=" background: rgba(0,0,0, .7);">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content" style="background: none !important;">
+                        <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                            <div class=" d-flex justify-content-center align-items-center">
+                                <div class="cont-certificado">
+                                    <img src="images/certificado_generado/porfavor_registrese.png" alt="" class="generado">
+                                    <a href="registro.php">
+                                        <img src="images/certificado_generado/btn_continuar_2.png" alt="" class="continuar-generado">
+                                    </a>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     <footer class="footer mb-3 pl-3">
         <div class="row m-0">
             <div class="col">
@@ -475,9 +503,7 @@
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
-    <script>
-
-    </script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

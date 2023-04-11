@@ -233,25 +233,8 @@
       background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .cont-certificado {
-      position: relative;
-  }
 
-  .generado {
-      width: 280px;
-  }
 
-  .cont-certificado>button {
-      background: none;
-      border: none;
-      position: absolute;
-      top: 75%;
-      left: 23%;
-  }
-
-  .continuar-generado {
-      width: 160px;
-  }
 
   /* pop_up_final */
   .input-fin {
@@ -380,19 +363,7 @@
         font-size: 1rem;
     }
 
-    .generado {
-        width: 480px !important;
-    }
-
-    .cont-certificado>button {
-        top: 77% !important;
-        left: 25%;
-    }
-
-    .continuar-generado {
-        width: 260px !important;
-    }
-
+    
     .img-inactivo {
         width: 480px;
     }

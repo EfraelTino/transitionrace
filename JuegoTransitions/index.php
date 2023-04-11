@@ -1,9 +1,14 @@
-
-
 <?php 
 include "../logica/conexion.php";
-$documento = $_GET['documento'];
-$tipo=$_GET['tipo'];
+$documento='';
+$tipo='';
+$id='';
+$decoded_query_string=$_GET['q'];
+$query_string_decoded=base64_decode($decoded_query_string);
+parse_str($query_string_decoded, $params);
+$documento =$params['documento'];
+$tipo=$params['tipo'];
+$id=$params['id'];
 
 ?>
 <!DOCTYPE html>
@@ -136,6 +141,7 @@ $tipo=$_GET['tipo'];
     <span id="preguntas" class="hud">Preguntas contestadas: <span id="preguntas_valor" class="value">0</span></span>
     <span id="tiempor" class="hud">Tiempo de respuesta: <span id="tiempor_valor" class="value">0</span></span>
   </div>
+  <div hidden id="id_jugador"> <?php echo $id ?></div>
 
   <audio id='music' hidden>
 

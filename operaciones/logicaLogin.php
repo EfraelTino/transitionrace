@@ -36,7 +36,7 @@ if ($row > 0) {
             "veces" => $veces,
         ]);
         $encoded_query_string = base64_encode($query_string);
-        header("location: ../Instrucciones.php?q=" . $encoded_query_string);
+        header("location: ../instrucciones.php?q=" . $encoded_query_string);
     } else {
         // PARA LA ACTIVACION
         header("Location: ../login.php?error=2");

@@ -12,7 +12,7 @@
    */
    $host = "localhost";
    $user = "desarro1_transitionrun";
-   // $user = "root";
+   $user = "root";
    // $pass = "";
    $pass = "_BTkOL.R^PfP";
    $database = "desarro1_transitionrun";

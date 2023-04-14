@@ -1,0 +1,56 @@
+[
+   
+  
+    {
+        "categoria": "FRECUENTES",
+        "pregunta": "Paciente de 47 años, arquitecto, que refiere trabajar en diseño 8 horas al día, utiliza 3 monitores ubicados a diferentes distancias, además de su celular. ¿Cuál es la mejor recomendación en lentes progresivos? ",
+        "respuesta": "Varilux X Series. ",
+        "incorrecta1": "Varilux Physior 3.0",
+        "incorrecta2": "Varilux Comfort Max ",
+        "incorrecta3": "Varilux Liberty 3.0.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "FRECUENTES",
+        "pregunta": "El beneficio de la tecnología Dual Optim en Eyezen Start permite:",
+         "respuesta": "Garantizar la máxima agudeza visual gracias a la optimización del diseño del lentes",
+        "incorrecta1": "Relajar los ojos gracias a 3 perfiles de potencia en visión próxima.",
+        "incorrecta2": "Proteger los ojos de la radiación UV.",
+        "incorrecta3": "Proteger los ojos de la radiación de luz azul nociva.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "FRECUENTES",
+        "pregunta": "Las siguientes son características y/o beneficios de Airwear (policarbonato):",
+        "respuesta": "Alto índice, versátil, alta resistencia a impactos, 100% protección UV.",
+        "incorrecta1": "Alto índice, 100% protección UV y peso específico de 1.36 gr/cm3",
+        "incorrecta2": "Medio índice, 100% protección UV e irrompible",
+        "incorrecta3": "Resistencia a las rayas, reducción de la adherencia del polvo al lente.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "FRECUENTES",
+        "pregunta": "La protección de luz azul nociva está disponible en Transitions Signature G8, cuando está desactivado la protección es del:",
+        "respuesta": "20%",
+        "incorrecta1": "10%",
+        "incorrecta2": "25%",
+        "incorrecta3": "40%",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "FRECUENTES",
+        "pregunta": "XTEND, la tecnología de Varilux X Series, tiene el siguiente beneficio:",
+        "respuesta": "Genera una visión individualizada y con fluidez a todas las distancias y en movimiento.",
+        "incorrecta1": "Disminuye el efecto de balanceo.",
+        "incorrecta2": "Aumenta en contraste de los colores.",
+        "incorrecta3": "Dar flexibilidad postural.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    }
+]

@@ -1,17 +1,19 @@
 <?php
 include "logica/conexion.php";
-$documento='';
-$tipo='';
-$veces='';
-$id='';
+$documento = '';
+$tipo = '';
+$veces = '';
+$id = '';
+$nivel = '';
 $decoded_query_string = $_GET["q"];
 $query_string_decoded = base64_decode($decoded_query_string);
 parse_str($query_string_decoded, $params);
 
 $documento = $params['documento'];
 $tipo = $params['tipo'];
-$veces=$params['veces'];
-$id=$params['id'];
+$veces = $params['veces'];
+$id = $params['id'];
+$nivel = $params['nivel'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -429,7 +431,7 @@ $id=$params['id'];
             </div>
         </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row m-0 p-0">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                 <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
@@ -489,14 +491,15 @@ $id=$params['id'];
         function openLink() {
             // window.open("JuegoTransitions/index.html");
             //  window.location.href = "verid.php?documento=" + documento + "&puntaje=" + puntaje+ "&preguntas=" + preguntas_correctas+"&max="+numeroMax;
-            <?php $query_string= http_build_query([
+            <?php $query_string = http_build_query([
                 "id" => $id,
                 "documento" => $documento,
                 "tipo" => $tipo,
                 "veces" => $veces,
+                "nivel" => $nivel,
             ]);
-            $encoded_query_string=base64_encode($query_string);?>
-            window.location.href = "seguridad.php<?php echo '?q=' .$encoded_query_string;?>";
+            $encoded_query_string = base64_encode($query_string); ?>
+            window.location.href = "seguridad.php<?php echo '?q=' . $encoded_query_string; ?>";
         }
     </script>
 </body>

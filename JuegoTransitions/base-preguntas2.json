@@ -1,0 +1,66 @@
+[
+   
+  
+    {
+        "categoria": "ALTO STOCK",
+        "pregunta": "Paciente de 47 años, arquitecto, que refiere trabajar en diseño 8 horas al día, utiliza 3 monitores ubicados a diferentes distancias, además de su celular. ¿Cuál es la mejor recomendación en lentes progresivos? ",
+        "respuesta": "Varilux X Series. ",
+        "incorrecta1": "Varilux Physior 3.0",
+        "incorrecta2": "Varilux Comfort Max ",
+        "incorrecta3": "Varilux Liberty 3.0.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "ALTO STOCK",
+        "pregunta": "¿Cómo funcionan los lentes Transitions XTRActive Polarized dentro del automóvil?",
+         "respuesta": "Los lentes se activan detrás del parabrisas en función de la intensidad lumínica, pero no se polarizan, porque el parabrisas bloquea los rayos UV.",
+        "incorrecta1": "Los lentes se activan y polarizan por efecto de la radiación UV.",
+        "incorrecta2": "Los lentes se activan y polarizan por efecto de la luz visible.",
+        "incorrecta3": "Elimina los brillos cegantes, objetos y letreros.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "ALTO STOCK",
+        "pregunta": "¿Cuál es el beneficio principal de la Tecnología Light Scan?",
+        "respuesta": "Bloquea el 20% de la luz azul violeta dañina, manteniendo una excelente transparencia para una visión óptima.",
+        "incorrecta1": "Reducción de los reflejos laterales en un 30% y los reflejos frontales en un 20%",
+        "incorrecta2": "Protección 35 veces más de la radiación UV",
+        "incorrecta3": "Reducción de la adherencia del agua al lente.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "ALTO STOCK",
+        "pregunta": "Varilux Comfort Max, maneja un criterio óptico que permite múltiples posiciones de cabeza para fijar un objeto, esto hace referencia a:",
+        "respuesta": "Flexibilidad postural.",
+        "incorrecta1": "Comportamiento visual de cerca.",
+        "incorrecta2": "Coeficiente ojo – cabeza.",
+        "incorrecta3": "Transiciones suaves.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "ALTO STOCK",
+        "pregunta": "¿Cuáles son los beneficios visuales que le brinda al paciente nuestro tratamiento polarizado Xperio?",
+        "respuesta": "Todas las anteriores",
+        "incorrecta1": "Máximo contraste visual",
+        "incorrecta2": "Mejora la textura y detalles visuales",
+        "incorrecta3": "Realza los colores",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "ALTO STOCK",
+        "pregunta": "¿Qué pasa cuando los lentes Transitions XTRActive Polarized están desactivados",
+        "respuesta": "En estado de claridad, los lentes Transitions XTRActive Polarized carecen de efecto de polarización dado que reaccionan a la luz UV.",
+        "incorrecta1": "Los lentes se oscurecen",
+        "incorrecta2": "El efecto de polarización sigue vigente para evitar el deslumbramiento de las pantallas",
+        "incorrecta3": "Se adaptan constantemente a cualquier condición de la luz",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    }
+]

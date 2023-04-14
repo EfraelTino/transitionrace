@@ -147,10 +147,8 @@ function recargaGAS(){
     }
 }
 function finEnviarBD() {
-
+    //alert("que hona huero");
     window.location.href = "../puntuacion.php?preguntas=" +preguntas_correctas + "&puntaje=" + scoreFinal+ "&vuelta=" + currentLapTime+"&id="+id;
-   //window.location.href = "../puntuacion.html";
-//    window.location.href = "../puntuacion.php?preguntas=" + preguntas_correctas + "&puntaje=" + scorefinal + "&vuelta" + currentLapTime; 
   
   
   }
@@ -275,7 +273,7 @@ async function update(dt) {
             recargaOIL(9);
         }
     }
-    // console.log(position);
+     console.log(gasolina);
     if (gasolina < 1) {
 
         if (!gameOver) {
@@ -340,7 +338,7 @@ async function update(dt) {
             if (Util.overlap(playerX, playerW, car.offset, carW, 0.8)) {
                 speed = car.speed * (car.speed / speed);
                 position = Util.increase(car.z, -playerZ, trackLength);
-               console.log(vuelta);
+               //console.log(vuelta);
                 gasolina -= 10 + vuelta;
 
                 Game.playChoke();

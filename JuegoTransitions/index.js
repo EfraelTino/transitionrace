@@ -7,14 +7,26 @@ var iniciar = false;
 var numeroMax = 100;
 var pre = document.getElementById("contenedor");
 var caja = document.getElementById("quest");
+var tipo_jugador = document.getElementById("tipo").innerHTML;
+var nivel = document.getElementById("nivel").innerHTML;
+var id_jugador = document.getElementById("id_jugador").innerHTML;
+var base_preguntas ="";
+var interprete;
+
+
 
 window.onload = function () {
-  base_preguntas = readText("base-preguntas.json");
+  
+  switch (nivel){ // NIVEL ACA 
+    case "0": base_preguntas = readText("base-preguntas0.json"); break;
+    case "1": base_preguntas = readText("base-preguntas1.json"); break;
+    case "2": base_preguntas = readText("base-preguntas2.json"); break;
+    case "3": base_preguntas = readText("base-preguntas3.json"); break;
+  }
+  
   interprete_bp = JSON.parse(base_preguntas);
   escogerPreguntaAleatoria();
   mostrarCedula();
- // console.log(pre);
-  //pre.style.display = "none";
 };
 function mostrarCedula() {
 
@@ -210,12 +222,7 @@ var myfunc = setInterval(function () {
 
 
 }, 18)
-function finEnviarBD() {
 
-
-  //window.location.href = "verid.php?documento=" + documento + "&puntaje=" + puntaje+ "&preguntas=" + preguntas_correctas+"&max="+numeroMax;
-
-}
 
 function reiniciar() {
   caja.style.display="none";

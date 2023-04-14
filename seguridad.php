@@ -1,16 +1,18 @@
 <?php
 include "logica/conexion.php";
-$documento='';
-$tipo='';
-$veces='';
-$id='';
-$decoded_query_string=$_GET['q'];
-$query_string_decoded=base64_decode($decoded_query_string);
+$documento = '';
+$tipo = '';
+$veces = '';
+$id = '';
+$nivel = '';
+$decoded_query_string = $_GET['q'];
+$query_string_decoded = base64_decode($decoded_query_string);
 parse_str($query_string_decoded, $params);
 $documento = $params['documento'];
 $tipo = $params['tipo'];
 $veces = $params['veces'];
-$id=$params['id'];
+$nivel = $params['nivel'];
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -432,12 +434,15 @@ $id=$params['id'];
                 </div>
             </nav>
             <div class="container">
-                <div class="row img-principal">
-                    <div class="col div-content justify-content-center align-items-center d-flex flex-column" style="padding-top: 4rem;">
+                <div class="row m-0 p-0">
+                    <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                         <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
+                        <img src="images/btn_seguridad.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
                     </div>
-                    <div style="padding-top: 50%;"></div>
-                    <div class="col-12 d-flex justify-content-center texto-inicio-contenedor" style="margin-top: -5rem;">
+
+                </div>
+                <div class="row img-principal" style="margin-top: 0!important;">
+                    <div class="col-12 d-flex justify-content-center texto-inicio-contenedor">
                         <div class="contenedor-puntos">
                             <img src="images/puntuacion_final/5.png" class="img-fluid text-center" alt="">
 
@@ -482,15 +487,16 @@ $id=$params['id'];
                 $stmt->bind_param('ii', $veces, $id);
                 $stmt->execute();
             }
-            $query_string=http_build_query([
+            $query_string = http_build_query([
                 "id" => $id,
-                "documento" =>$documento,
-                "tipo" =>$tipo,
-                "veces" =>$veces
+                "documento" => $documento,
+                "tipo" => $tipo,
+                "veces" => $veces,
+                "nivel" => $nivel
             ]);
-            $encoded_query_string=base64_encode($query_string);
+            $encoded_query_string = base64_encode($query_string);
             ?>
-            window.location.href = "JuegoTransitions/index.php<?php echo '?q='.$encoded_query_string;?> ";
+            window.location.href = "JuegoTransitions/index.php<?php echo '?q=' . $encoded_query_string; ?> ";
         }
     </script>
 </body>

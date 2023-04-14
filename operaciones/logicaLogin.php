@@ -25,6 +25,7 @@ if ($row > 0) {
     $estado = $array['estado'];
     $tipo = $array['tipo'];
     $veces = $array['veces'];
+    $nivel = $array['nivel'];
     if ($estado != 0) {
         // $veces++;
         $query_string = http_build_query([
@@ -34,6 +35,7 @@ if ($row > 0) {
             "tipo" => $tipo,
             "telefono" => $telefono,
             "veces" => $veces,
+            "nivel" => $nivel,
         ]);
         $encoded_query_string = base64_encode($query_string);
         header("location: ../instrucciones.php?q=" . $encoded_query_string);

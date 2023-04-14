@@ -19,6 +19,8 @@
    // $database = "transitionrun";
    $dblink = mysqli_connect($host, $user, $pass, $database);
    if($dblink){
-   //  echo "conectadosss";
+     //echo "conectadosss";
+   }else{
+    //  echo "NO CONECTADO";
    }
 ?>

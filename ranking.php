@@ -13,6 +13,7 @@ $documento=$row['documento'];
 $tipo=$row['tipo'];
 $veces=$row['veces'];
 $id=$row['id'];
+$nivel=$row['nivel'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -599,7 +600,7 @@ $id=$row['id'];
                     <div class="col-12">
                         <div class="col-12 d-flex justify-content-center texto-nombre">
                             <img src="images/ranking/leonardo.png" class="img-fluid text-center" alt="">
-                            <p class="texto-nombre-usuario"><?php echo $nombre?></p>
+                            <p class="texto-nombre-usuario">LEONARDO</p>
                         </div>
                     </div>
 
@@ -631,6 +632,7 @@ $id=$row['id'];
                 "documento" => $documento,
                 "tipo" => $tipo,
                 "veces" => $veces,
+                "nivel" => $nivel,
             ]);
             $encoded_query_string=base64_encode($query_string);
             ?>

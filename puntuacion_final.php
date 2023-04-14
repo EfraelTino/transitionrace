@@ -455,32 +455,13 @@ $id = $params['id'];
                         <button type="submit" class="btn">
                             <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
                         </button>
-                        <!-- HABILITAR MODAL en button :  data-toggle="modal" data-target="#modalFormEnviado"  -->
                     </div>
                     <div class="col-6 m-0 p-0">
-                        <button type="button" data-toggle="modal" data-target="#modalFormEnviado" class="btn">
+                        <a href="index.html"  class="btn">
                             <img src="images/form/btn_omitir.png" class="img-fluid" alt="">
-                        </button>
+                        </a>
                     </div>
                 </div>
-                <!-- <div class="modal fade" id="modalFormEnviado" tabindex="-1" aria-labelledby="modalFormEnviadoLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content resp">
-                            <div class="modal-body ">
-                                <div class=" d-flex justify-content-center align-items-center">
-                                    <div class="cont-img ">
-                                        <img src="images/form/form-enviado.png" class="img-inactivo" alt="">
-                                        <a class="btn_cerrar" href="ranking.html" >
-                                            <img src="images/form/close.png" alt=""  class="close-inactivo">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
             </form>
         </div>
 
@@ -519,35 +500,14 @@ $id = $params['id'];
                             <button type="submit" class="btn">
                                 <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
                             </button>
-                            <!-- ABRIIR MODAL: data-toggle="modal" data-target="#modalFormEnviado1"  -->
                         </div>
                         <div class="col-6 m-0 p-0">
-                            <button type="button" data-toggle="modal" data-target="#modalFormEnviado1" class="btn">
+                            <a href="index.html" class="btn">
                                 <img src="images/form/btn_omitir.png" class="img-fluid" alt="">
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </form>
-                <!-- Modal form-enviado-->
-                <!-- <div class="modal fade" id="modalFormEnviado1" tabindex="-1" aria-labelledby="modalFormEnviadoLabel1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content resp">
-                            <div class="modal-body ">
-                                <div class=" d-flex justify-content-center align-items-center">
-                                    <div class="cont-img ">
-                                        <img src="images/form/form-enviado.png" class="img-inactivo" alt="">
-                                        <a href="ranking.html">
-                                            <img src="images/form/close.png" alt="" class="close-inactivo">
-                                        </a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
                 </form>
             </div>
         </div>

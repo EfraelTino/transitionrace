@@ -1,0 +1,66 @@
+[
+   
+  
+    {
+        "categoria": "MEJORES",
+        "pregunta": "De Transitions XTRActive Polarized podemos decir:",
+        "respuesta": "B y C son correctas",
+        "incorrecta1": "A.- El efecto de polarización sigue vigente en interiores y exteriores para evitar el deslumbramiento de las pantallas",
+        "incorrecta2": "B.- La polarización dinámica se genera con tintes fotocromáticos dicroicos ultrarrápidos que se organizan siguiendo un patrón lineal en la matriz para polarizar la luz",
+        "incorrecta3": "C.- La eficiencia de polarización y la oscuridad se maximizan cuando los lentes se exponen a un alto nivel de rayos UV y luz visible en exteriores",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "MEJORES",
+        "pregunta": "El material alto índice Airwear es ideal para proteger a los niños, aquellos que practican deportes y para reducir las consecuencias de cualquier tipo de accidente. ¿Cuántas veces el material Airwear es más resistente sobre los materiales estándar?",
+         "respuesta": "12 VECES",
+        "incorrecta1": "3 VECES",
+        "incorrecta2": "6 VECES",
+        "incorrecta3": "8 VECES",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "MEJORES",
+        "pregunta": "El tratamiento Blue UV bloquea la luz azul nociva en un % del:",
+        "respuesta": "20%",
+        "incorrecta1": "88%",
+        "incorrecta2": "35%",
+        "incorrecta3": "50%",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+
+    {
+        "categoria": "MEJORES",
+        "pregunta": "El AR Kodak Clean & Clear además de repeler el agua, tiene los siguientes beneficios:",
+        "respuesta": "Capa antiestática que repele las partículas de polvo y capa oleofóbica que repele la grasa y las huellas para brindar lentes más limpios.",
+        "incorrecta1": "Capa hidrofóbica.",
+        "incorrecta2": "Capa de protección selectiva contra la luz azul turquesa.",
+        "incorrecta3": "Optima claridad sin tintes residuales.",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "MEJORES",
+        "pregunta": "La tecnología I-Sync permite zonas de visión más amplias para hipermétropes, zonas de distancia mejoradas para miopes, mejor calidad de imagen, mejor contraste. ¿En cuál de los siguientes progresivos no está presente?",
+        "respuesta": "Kodak Intro",
+        "incorrecta1": "Kodak Network – Kodak Intro",
+        "incorrecta2": "Kodak Unique HD – Kodak Network",
+        "incorrecta3": "Kodak Unique HD DRO",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "MEJORES",
+        "pregunta": "¿Qué pasa cuando los lentes Transitions XTRActive Polarized están desactivados",
+        "respuesta": "En estado de claridad, los lentes Transitions XTRActive Polarized carecen de efecto de polarización dado que reaccionan a la luz UV.",
+        "incorrecta1": "Los lentes se oscurecen",
+        "incorrecta2": "El efecto de polarización sigue vigente para evitar el deslumbramiento de las pantallas",
+        "incorrecta3": "Se adaptan constantemente a cualquier condición de la luz",
+        "imagen": "../imagenes/logo.png",
+        "objectFit": "contain"
+    }
+]

@@ -9,7 +9,7 @@ parse_str($query_string_decoded, $params);
 $documento =$params['documento'];
 $tipo=$params['tipo'];
 $id=$params['id'];
-
+$nivel= $params['nivel'];
 ?>
 <!DOCTYPE html>
 
@@ -124,7 +124,7 @@ $id=$params['id'];
 
     </div>
 
-    <script src="index.js"></script>
+    
 
     <canvas id="canvas">
       Este juego no lo puedes usar en este navegador utiliza por favor uno compatible &lt;canvas&gt; element
@@ -140,8 +140,11 @@ $id=$params['id'];
     <span id="puntos" class="hud">Puntaje: <span id="puntos_valor" class="value">0.0</span></span>
     <span id="preguntas" class="hud">Preguntas contestadas: <span id="preguntas_valor" class="value">0</span></span>
     <span id="tiempor" class="hud">Tiempo de respuesta: <span id="tiempor_valor" class="value">0</span></span>
+    <div id="id_jugador" class="value" ><?php echo $id;?> </div>
+    <div id="tipo" class="value" ><?php echo $tipo;?></div>
+    <div id="nivel" class="value" ><?php echo $nivel;?></div>
   </div>
-  <div hidden id="id_jugador"> <?php echo $id ?></div>
+ 
 
   <audio id='music' hidden>
 
@@ -160,7 +163,7 @@ $id=$params['id'];
   <script src="stats.js"></script>
   <script src="common.js"></script>
   <script src="juego.js"></script>
-
+  <script src="index.js"></script>
 
 </body>
 

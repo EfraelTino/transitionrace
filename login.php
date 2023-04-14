@@ -431,10 +431,10 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
             <div class="col-12 col-md-5 ">
                 <form class="mt-3" action="operaciones/logicaLogin.php" method="POST">
                     <div class="row align-items-center">
-                        <div class="col-12 mb-2">
+                        <div class="col-12" style="margin: 3rem 0">
                             <input type="text" class="form-control id" name="documento">
                         </div>
-                        <div class="col-12 mb-2">
+                        <div class="col-12" style="margin: 1rem 0">
                             <div class="form-check p-0">
                                 <label class="label-rombo">
                                     <input type="checkbox" class="checkbox-svg" required>
@@ -461,8 +461,8 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                             <button type="submit" class="btn">
                                 <img src="images/form/btn_ingresar.png" class="img-fluid" alt="img">
                             </button>
-                            <a class="link-navigation text-white d-block text-center" href="formularioActualizar.php">¿Deseas actualizar tus datos?</a>
-                            <a class="link-navigation text-white d-block text-center" href="registro.php">Si no estás registrado, ingresa aca</a>
+                            <a class="link-navigation text-white d-block text-center mb-3" href="formularioActualizar.php" style="text-decoration: underline;">¿Deseas actualizar tus datos?</a>
+                            <a class="link-navigation text-white d-block text-center my-3" href="registro.php" style="text-decoration: underline;">Si no estás registrado, ingresa aca</a>
                         </div>
                     </div>
                 </form>
@@ -502,7 +502,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                     <div class="modal-body " style="overflow-y: clip; padding:2rem;">
                         <div class=" d-flex justify-content-center align-items-center">
                             <div class="cont-certificado">
-                                <img src="images/certificado_generado/con_correcto.png" alt="" class="generado">
+                                <img src="images/certificado_generado/no_registrado.png" alt="" class="generado">
                                 <a href="registro.php">
                                     <img src="images/certificado_generado/btn_continuar_2.png" alt="" class="continuar-generado">
                                 </a>

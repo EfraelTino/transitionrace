@@ -431,82 +431,83 @@ if (isset($_GET['estado']) && $_GET['estado'] == 4) {
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="row m-0 p-0">
+    <div>
+        <div class="container">
+            <div class="row">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                 <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
-                <img src="images/img_registro.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
+                <img src="images/img_registro.png" class="img-fluid  text-center img-lgo-instruccioness" alt="instrucciones">
             </div>
-
         </div>
-        <div class="row m-0 p-0 justify-content-center">
-            <div class="col-12 col-md-5 ">
-                <form class="mt-3" action="operaciones/logicaregistro.php" method="GET">
-                    <div class="row m-0 p-0 align-items-center">
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control nombre" required name="nombre">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control optica" required name="optica">
-                        </div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-12 col-md-5 ">
+                    <form class="mt-3" action="operaciones/logicaregistro.php" method="GET">
+                        <div class="row m-0 p-0 align-items-center">
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control nombre" required name="nombre">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control optica" required name="optica">
+                            </div>
 
-                        <div class="col-12 mb-2">
-                            <input type="email" class="form-control email" required name="email">
-                        </div>
+                            <div class="col-12 mb-2">
+                                <input type="email" class="form-control email" required name="email">
+                            </div>
 
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control celular" required name="celular">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control id" required name="identificacion">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control my-3 token" required name="token">
-                        </div>
-                        <div class="col-12 mb-2 text-container">
-                            <p class="text-white form-check-label text-center" class="quien" style="text-decoration: overline;
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control celular" required name="celular">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control id" required name="identificacion">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control my-3 token" required name="token">
+                            </div>
+                            <div class="col-12 mb-2 text-container">
+                                <p class="text-white form-check-label text-center" class="quien" style="text-decoration: overline;
                             text-decoration-thickness: 1px;
                             padding-top: 0.2em;">Quien me atiende en el laboratorio</p>
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control my-3 nombre-2" required name="encargado">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <div class="form-check p-0">
-                                <label class="label-rombo">
-                                    <input type="checkbox" class="checkbox-svg" required>
-                                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" class="checkbox-svg-icon">
-                                        <g id="Layer_1">
-                                            <title>Layer 1</title>
-                                            <path id="svg_2" d="m1.1552,11.09051l4.23429,-9.92l11.29143,0l4.23428,9.92l-4.23428,9.92l-11.29143,0l-4.23429,-9.92z" stroke-width="1" stroke="#FFFFFF" fill="none" />
-                                            <path id="svg_3" d="m7.37679,10.95527l0,0c0,-2.20914 1.62968,-4 3.64,-4l0,0c0.96539,0 1.89124,0.42143 2.57387,1.17157c0.68263,0.75015 1.06613,1.76756 1.06613,2.82843l0,0c0,2.20914 -1.62968,4 -3.64,4l0,0c-2.01032,0 -3.64,-1.79086 -3.64,-4zm3.64,-4l0,8m-3.64,-4l7.28,0" stroke-width="2" stroke="#ffffff" fill="#ffffff" class="checkbox-svg-icon-check" />
-
-                                        </g>
-                                    </svg>
-                                    <p class="form-check-label text-white p-0 m-0"> *He leído, acepto y autorizo el uso y
-                                        tratamiento de mis datos personales de
-                                        conformidad con la <span style="text-decoration: underline;">Política de
-                                            Tratamiento de Datos, Términos y condiciones</span> del
-                                        Grupo ESSILOR Latinoameria.</p>
-                                </label>
                             </div>
-                        </div>
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control my-3 nombre-2" required name="encargado">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <div class="form-check p-0">
+                                    <label class="label-rombo">
+                                        <input type="checkbox" class="checkbox-svg" required>
+                                        <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" class="checkbox-svg-icon">
+                                            <g id="Layer_1">
+                                                <title>Layer 1</title>
+                                                <path id="svg_2" d="m1.1552,11.09051l4.23429,-9.92l11.29143,0l4.23428,9.92l-4.23428,9.92l-11.29143,0l-4.23429,-9.92z" stroke-width="1" stroke="#FFFFFF" fill="none" />
+                                                <path id="svg_3" d="m7.37679,10.95527l0,0c0,-2.20914 1.62968,-4 3.64,-4l0,0c0.96539,0 1.89124,0.42143 2.57387,1.17157c0.68263,0.75015 1.06613,1.76756 1.06613,2.82843l0,0c0,2.20914 -1.62968,4 -3.64,4l0,0c-2.01032,0 -3.64,-1.79086 -3.64,-4zm3.64,-4l0,8m-3.64,-4l7.28,0" stroke-width="2" stroke="#ffffff" fill="#ffffff" class="checkbox-svg-icon-check" />
 
-                    </div>
-                    <div class="row m-0 p-0">
-                        <div class="col-12">
-                            <button type="submit" class="btn">
-                                <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
-                            </button>
-                            <!-- abrir modal data-toggle="modal" data-target="#modalFormEnviado" -->
-                            <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="login.php">Ya tienes
-                                registro</a>
-                            <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="loginexpert.php">Si eres
-                                Experts, ingresa aca</a>
-                        </div>
+                                            </g>
+                                        </svg>
+                                        <p class="form-check-label text-white p-0 m-0"> *He leído, acepto y autorizo el uso y
+                                            tratamiento de mis datos personales de
+                                            conformidad con la <span style="text-decoration: underline;">Política de
+                                                Tratamiento de Datos, Términos y condiciones</span> del
+                                            Grupo ESSILOR Latinoameria.</p>
+                                    </label>
+                                </div>
+                            </div>
 
-                    </div>
-                </form>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12">
+                                <button type="submit" class="btn">
+                                    <img src="images/form/btn_enviar.png" class="img-fluid" alt="">
+                                </button>
+                                <!-- abrir modal data-toggle="modal" data-target="#modalFormEnviado" -->
+                                <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="login.php">Ya tienes
+                                    registro</a>
+                                <a class="link-navigation text-white d-block text-center" style="text-decoration: underline;" href="loginexpert.php">Si eres
+                                    Experts, ingresa aca</a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -581,7 +582,7 @@ if (isset($_GET['estado']) && $_GET['estado'] == 4) {
         <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="background: none !important;">
-                <div class="modal-body " style="overflow-y: clip; padding:2rem;">
+                    <div class="modal-body " style="overflow-y: clip; padding:2rem;">
                         <div class=" d-flex justify-content-center align-items-center">
                             <div class="cont-certificado">
                                 <img src="images/certificado_generado/verificar_cuenta.png" alt="" class="generado">

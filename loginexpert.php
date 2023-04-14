@@ -506,9 +506,9 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                 <div class="modal-body " style="overflow-y: clip; padding:2rem;">
                         <div class=" d-flex justify-content-center align-items-center">
                             <div class="cont-certificado">
-                                <img src="images/certificado_generado/con_correcto.png" alt="" class="generado">
+                                <img src="images/certificado_generado/usuario_expert.png" alt="" class="generado">
                                 <a href="registro.php">
-                                    <img src="images/certificado_generado/btn_continuar.png" alt="" class="continuar-generado">
+                                    <img src="images/certificado_generado/btn_continuar_2.png" alt="" class="continuar-generado">
                                 </a>
                             </div>
                         </div>

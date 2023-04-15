@@ -20,7 +20,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
     <link rel="stylesheet" href="css/modal.css">
 
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <title>Home</title>
+    <title>Log In</title>
 </head>
 
 <body>
@@ -339,8 +339,10 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col">
-                                        <img src="" alt="">
+                                    <div class="col-12 video-container video" >
+                                        <video src="video/video_transition.mp4" autoplay controls width="100%" height="auto">Tu navegador no soporta la etiqueta de video</video>
+                                    </div>
+                                    <div class="col-12">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
                                             Recuerden todos nuestros clientes que deben realizar un primer ingreso, un
@@ -461,7 +463,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                             <button type="submit" class="btn">
                                 <img src="images/form/btn_ingresar.png" class="img-fluid" alt="img">
                             </button>
-                            <a class="link-navigation text-white d-block text-center mb-3" href="formularioActualizar.php" style="text-decoration: underline;">¿Deseas actualizar tus datos?</a>
+                            <a class="link-navigation text-white d-block text-center mb-3" href="formularioActualizarnormal.php" style="text-decoration: underline;">¿Deseas actualizar tus datos?</a>
                             <a class="link-navigation text-white d-block text-center my-3" href="registro.php" style="text-decoration: underline;">Si no estás registrado, ingresa aca</a>
                         </div>
                     </div>
@@ -514,7 +516,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
             </div>
         </div>
     <?php } ?>
-    <footer class="footer mb-3 pl-3">
+    <footer class="footer mb-3 pl-3" style="position: absolute;"> 
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>

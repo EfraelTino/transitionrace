@@ -12,7 +12,7 @@ class PDF extends FPDF
 function Header()
 {
     
-    $this->Image('estado.png',10,8,33);
+    $this->Image('logo.png',10,2,33);
    
     $this->SetFont('Arial','B',10);
     $this->SetFillColor(255,0,0);
@@ -138,6 +138,7 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',10);
 $pos=0;
 while ($row = $resultado-> fetch_assoc()){
+    
     $pos++;
     $pdf->Cell(30,10,utf8_decode($pos),1,0,'C', 0);
     $pdf->Cell(40,10,utf8_decode($row['llabeglobal']),1,0,'C', 0);
@@ -147,7 +148,7 @@ while ($row = $resultado-> fetch_assoc()){
     $pdf->Cell(40,10,utf8_decode($row['fechai']),1,0,'C', 0);
     $pdf->Cell(40,10,utf8_decode($row['fechau']),1,0,'C', 0);
     $pdf->Cell(10,10,utf8_decode($row['tipo']),1,0,'C', 0);
-    $pdf->Cell(20,10,utf8_decode($row['tipo']),1,1,'C', 0);
+    $pdf->Cell(20,10,utf8_decode($row['nivel']),1,1,'C', 0);
 }
 
 

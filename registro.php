@@ -24,7 +24,7 @@ if (isset($_GET['estado']) && $_GET['estado'] == 4) {
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/modal.css">
-    <title>Home</title>
+    <title>Register</title>
 </head>
 
 <body>
@@ -342,16 +342,11 @@ if (isset($_GET['estado']) && $_GET['estado'] == 4) {
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="row m-0 p-0">
-                                    <div class="col-12 video-container">
-                                        <div class="col-12 video-container">
-                                            <video width="100%" height="auto" src="video/run_transitions_Landing_aju.mp4" controls>
-                                                Tu navegador no soporta la etiqueta de video.
-                                                        </video>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-12 video-container video" >
+                                        <video src="video/video_transition.mp4" autoplay controls width="100%" height="auto">Tu navegador no soporta la etiqueta de video</video>
                                     </div>
                                     <div class="col-12">
-                                        <img src="" alt="">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
                                             Recuerden todos nuestros clientes que deben realizar un primer ingreso, un
@@ -460,9 +455,6 @@ if (isset($_GET['estado']) && $_GET['estado'] == 4) {
                             <div class="col-12 mb-2">
                                 <input type="text" class="form-control id" required name="identificacion">
                             </div>
-                            <div class="col-12 mb-2">
-                                <input type="text" class="form-control my-3 token" required name="token">
-                            </div>
                             <div class="col-12 mb-2 text-container">
                                 <p class="text-white form-check-label text-center" class="quien" style="text-decoration: overline;
                             text-decoration-thickness: 1px;
@@ -518,7 +510,7 @@ if (isset($_GET['estado']) && $_GET['estado'] == 4) {
         <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true" style="    background: rgba(0,0,0, .7);">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="background: none !important;">
-                    <div class="modal-body " style="overflow-y: auto;">
+                    <div class="modal-body " style="overflow-y: clip; padding:2rem;">
                         <div class=" d-flex justify-content-center align-items-center">
                             <div class="cont-certificado">
                                 <img src="images/certificado_generado/ya_se_encuentra.png" alt="" class="generado">

@@ -18,7 +18,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <title>Home</title>
+    <title>Log In Expert</title>
 </head>
 
 <body>
@@ -337,8 +337,10 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col">
-                                        <img src="" alt="">
+                                    <div class="col-12 video-container video" >
+                                        <video src="video/video_transition.mp4" autoplay controls width="100%" height="auto">Tu navegador no soporta la etiqueta de video</video>
+                                    </div>
+                                    <div class="col-12">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
                                             Recuerden todos nuestros clientes que deben realizar un primer ingreso, un
@@ -435,7 +437,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
             <div class="col-12 col-md-5 ">
                 <form class="mt-3" action="operaciones/logicaLoginExpert.php" method="POST">
                     <div class="row align-items-center">
-                        <div class="col-12 mb-2">
+                        <div class="col-12 " style="margin:2rem 0 !important">
                             <input type="text" class="form-control id" name="documento">
                         </div>
                         <div class="col-12 mb-2">
@@ -466,7 +468,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
                                 <img src="images/form/btn_ingresar.png" class="img-fluid" alt="img">
                             </button>
                             <a class="link-navigation text-white d-block text-center" href="formularioActualizar.php">¿Deseas actualizar tus datos?</a>
-                            <a class="link-navigation text-white d-block text-center" href="registro.php">Si no estás registrado, ingresa aca</a>
+                            <a class="link-navigation text-white d-block text-center" href="formularioRegistroExpert.php">Si no estás registrado, ingresa aca</a>
                         </div>
                     </div>
                 </form>
@@ -520,7 +522,7 @@ if (isset($_GET["error"]) && $_GET["error"] == 2) {
             </div>
         </div>
     <?php } ?>
-    <footer class="footer mb-3 pl-3">
+    <footer class="footer mb-3 pl-3" style="position: absolute;">
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>

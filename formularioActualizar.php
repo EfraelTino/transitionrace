@@ -16,7 +16,7 @@ if(isset($_GET['estado']) && $_GET['estado'] == 0){
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <title>Home</title>
+    <title>Update form</title>
 </head>
 
 <body>
@@ -335,8 +335,10 @@ if(isset($_GET['estado']) && $_GET['estado'] == 0){
                             </div>
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="col">
-                                        <img src="" alt="">
+                                    <div class="col-12 video-container video" >
+                                        <video src="video/video_transition.mp4" autoplay controls width="100%" height="auto">Tu navegador no soporta la etiqueta de video</video>
+                                    </div>
+                                    <div class="col-12">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
                                             Recuerden todos nuestros clientes que deben realizar un primer ingreso, un
@@ -420,20 +422,20 @@ if(isset($_GET['estado']) && $_GET['estado'] == 0){
         <div class="row">
             <div class="col div-content justify-content-center align-items-center d-flex flex-column">
                 <img src="images/logo.png" class="img-fluid  text-center img-lgo-instrucciones" alt="">
-                <img src="images/form/title_inicio_experts.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
+                <img src="images/form/title_actualizar_experts.png" class="img-fluid  text-center img-lgo-instruccioness" alt="">
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 ">
                 <form class="mt-3" action="operaciones/logicaFormularioActulizar.php" method="POST">
                     <div class="row align-items-center">
-                        <div class="col-12 mb-2">
+                        <div class="col-12" style="margin: 1.5rem 0">
                             <input type="number" class="form-control id" name="documento" required>
                         </div>
-                        <div class="col-12 mb-2">
+                        <div class="col-12" style="margin: 1.5rem 0">
                             <input type="text" class="form-control token" name="token" >
                         </div>
-                        <div class="col-12 mb-2">
+                        <div class="col-12" style="margin: 1.5rem 0">
                             <div class="form-check p-0">
                                 <label class="label-rombo">
                                     <input type="checkbox" class="checkbox-svg" required>
@@ -461,7 +463,7 @@ if(isset($_GET['estado']) && $_GET['estado'] == 0){
                                 <img src="images/form/btn_ingresar.png" class="img-fluid" alt="">
                             </button>
                             <!-- <a class="link-navigation text-white d-block text-center" href="ActualizarDatos.php">¿Deseas actualizar tus datos?</a> -->
-                                <a class="link-navigation text-white d-block text-center" href="registroExpert.php">Si eres
+                                <a class="link-navigation text-white d-block text-center" href="registro.php">Si eres
                                 Experts y no estás registrado, ingresa aca</a>
                         </div>
                     </div>
@@ -492,7 +494,7 @@ if(isset($_GET['estado']) && $_GET['estado'] == 0){
                 </div>
             </div>
         <?php } ?>
-    <footer class="footer mb-3 pl-3">
+    <footer class="footer mb-3 pl-3" style="position: absolute;">
         <div class="row m-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>

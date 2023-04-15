@@ -60,7 +60,7 @@ while ($row = $resultado->fetch_assoc()) {
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/3.css">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <title>Home</title>
+    <title>Score</title>
 </head>
 
 <body>
@@ -87,7 +87,7 @@ while ($row = $resultado->fetch_assoc()) {
                             <img src="images/cont-puntos.png" alt="">
                             <div style=" position: absolute; top: 0; left: 50%;transform: translate(-50%, 10%);">
                                 <p class="puntos-text text-center p-0 m-0"><strong>PUNTOS</strong></p>
-                                <h2 class="text-center cantidad-puntos p-0 m-0"><strong><?php echo $scoreFinal; ?></strong></h2>
+                                <h2 class="text-center cantidad-puntos p-0 m-0"><strong><?php echo $scoreFinal > $puntuacion_db ? $scoreFinal : $puntuacion_db;?></strong></h2>
                                 <p class="text-center puesto-text p-0 m-0 "><strong>Puesto</strong></p>
                                 <h2 class="text-center cantidad-puesto p-0 m-0 "><strong><?php echo $puesto; ?></strong></h2>
                             </div>
@@ -98,7 +98,7 @@ while ($row = $resultado->fetch_assoc()) {
                         <div class="contenedor-puntos">
                             <div class="cons-t">
                                 <p class="puntos-text2 text-center p-0 m-0"><strong>PUNTOS</strong></p>
-                                <h2 class="text-center cantidad-puntos2 p-0 m-0"><strong><?php echo $scoreFinal; ?></strong></h2>
+                                <h2 class="text-center cantidad-puntos2 p-0 m-0"><strong><?php echo $scoreFinal > $puntuacion_db ? $scoreFinal : $puntuacion_db;?></strong></h2>
                                 <p class="text-center puesto-text2 p-0 m-0 "><strong>Puesto</strong></p>
                                 <h2 class="text-center cantidad-puesto2 p-0 m-0 "><strong><?php echo $puesto; ?></strong></h2>
                             </div>
@@ -121,7 +121,7 @@ while ($row = $resultado->fetch_assoc()) {
             </div>
         </div>
     </div>
-    <footer class="footer mb-3 pl-3">
+    <footer class="footer mb-3 pl-3" style="position: absolute;">
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>

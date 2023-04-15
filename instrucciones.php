@@ -25,7 +25,7 @@ $nivel = $params['nivel'];
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <title>Home</title>
+    <title>Instruccions</title>
 </head>
 
 <body>
@@ -346,12 +346,11 @@ $nivel = $params['nivel'];
                                 <div class="row m-0 p-0">
                                     <div class="col-12 video-container">
                                         <video width="100%" height="auto">
-                                            <source src="video/run_transitions_Landing_aju.mp4" type="video/mp4" autoplay="false">
+                                            <source src="video/video_transition.mp4" type="video/mp4" autoplay="false">
                                             Tu navegador no soporta la etiqueta de video.
                                         </video>
                                     </div>
                                     <div class="col-12">
-                                        <img src="" alt="">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
                                             Recuerden todos nuestros clientes que deben realizar un primer ingreso, un
@@ -476,7 +475,7 @@ $nivel = $params['nivel'];
             </div>
         </div>
     </div>
-    <footer class="footer mb-3 ">
+    <footer class="footer mb-3 " style="position: absolute;">
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright ©️ 2022 Essilor Latinoamérica - Todos los derechos reservados.</p>

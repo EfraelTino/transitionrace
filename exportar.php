@@ -37,6 +37,7 @@
         <td style=" background-color: MediumPurple; font-size: 15px; color: white;">04 NUMERO CERTIFICADO</td>
         <td style=" background-color: MediumPurple; font-size: 15px; color: white;">05 NUMERO CERTIFICADO</td>
         <td style=" background-color: MediumPurple; font-size: 15px; color: white;">ADICIONAL</td>
+        <td style=" background-color: MediumPurple; font-size: 15px; color: white;">TIPO JUGADOR</td>
         <td style=" background-color: MediumPurple; font-size: 15px; color: white;">VECES JUGADOS</td>
         <td style=" background-color: MediumPurple; font-size: 15px; color: white;">NIVEL JUGADOR</td>
      
@@ -77,8 +78,8 @@
                <td><?php echo $row ['dato3']; ?></td>
                <td><?php echo $row ['dato4']; ?></td>
                <td><?php echo $row ['dato5']; ?></td>
-               <td><?php echo $row ['tipo']; ?></td>
                <td><?php echo $row ['pluss']; ?></td>
+               <td><?php echo $row ['tipo']; ?></td>
                <td><?php echo $row ['veces']; ?></td>
                <td><?php echo $row ['nivel']; ?></td>
                

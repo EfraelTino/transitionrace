@@ -16,7 +16,7 @@ $id = $params['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Home</title>
+    <title>Final score</title>
 </head>
 
 <body>
@@ -334,9 +334,11 @@ $id = $params['id'];
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class=" row m-0 p-0">
-                                    <div class="col">
-                                        <img src="" alt="">
+                                <div class="row">
+                                    <div class="col-12 video-container video" >
+                                        <video src="video/video_transition.mp4" autoplay controls width="100%" height="auto">Tu navegador no soporta la etiqueta de video</video>
+                                    </div>
+                                    <div class="col-12">
                                         <p class="text-white  text-terminos">Ya estás a punto de correr, inicia sesión o
                                             regístrate para retar tus habilidades.
                                             Recuerden todos nuestros clientes que deben realizar un primer ingreso, un
@@ -513,7 +515,7 @@ $id = $params['id'];
         </div>
 
     </div>
-    <footer class="footer  pl-3 ">
+    <footer class="footer  pl-3 " style="position: absolute;">
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright © 2022 Essilor Latinoamérica - Todos los derechos

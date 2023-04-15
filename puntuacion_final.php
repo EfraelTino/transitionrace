@@ -515,7 +515,7 @@ $id = $params['id'];
         </div>
 
     </div>
-    <footer class="footer  pl-3 " style="position: absolute;">
+    <footer class="footer  pl-3 ">
         <div class="row m-0 p-0">
             <div class="col">
                 <p class="m-0 text-footer">Copyright © 2022 Essilor Latinoamérica - Todos los derechos

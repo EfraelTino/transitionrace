@@ -24,7 +24,7 @@ if($row > 0 ){
         echo "error";
     }
     $stmt -> bind_param(
-        'ssssss',
+        'sssss',
         $dato1,
         $dato2,
         $dato3,

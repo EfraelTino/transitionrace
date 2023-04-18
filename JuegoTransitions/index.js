@@ -17,11 +17,12 @@ var interprete;
 
 window.onload = function () {
   
-  switch (nivel){ // NIVEL ACA 
+  switch (nivel){ 
     case "0": base_preguntas = readText("base-preguntas0.json"); break;
     case "1": base_preguntas = readText("base-preguntas1.json"); break;
     case "2": base_preguntas = readText("base-preguntas2.json"); break;
     case "3": base_preguntas = readText("base-preguntas3.json"); break;
+    // default: base_preguntas = readText("base-preguntas0.json");
   }
   
   interprete_bp = JSON.parse(base_preguntas);

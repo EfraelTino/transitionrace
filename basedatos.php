@@ -32,7 +32,7 @@ function Header()
     $this->Cell(20,10,utf8_decode('Preguntas'),1,0,'C', 0);
     $this->Cell(40,10,utf8_decode('Fecha ingreso'),1,0,'C', 0);
     $this->Cell(40,10,utf8_decode('Fecha último'),1,0,'C', 0);
-    $this->Cell(10,10,utf8_decode('Tipo'),1,0,'C', 0);
+    $this->Cell(13,10,utf8_decode('Tipo'),1,0,'C', 0);
     $this->Cell(20,10,utf8_decode('Nivel'),1,1,'C', 0);
 
     
@@ -143,11 +143,11 @@ while ($row = $resultado-> fetch_assoc()){
     $pdf->Cell(30,10,utf8_decode($pos),1,0,'C', 0);
     $pdf->Cell(40,10,utf8_decode($row['llabeglobal']),1,0,'C', 0);
     $pdf->Cell(40,10,utf8_decode($row['documento']),1,0,'C', 0);
-    $pdf->Cell(30,10,utf8_decode($row['puntuacion']),1,0,'L', 0);
-    $pdf->Cell(20,10,utf8_decode($row['preguntas']),1,0,'L', 0);
+    $pdf->Cell(30,10,utf8_decode($row['puntuacion']),1,0,'C', 0);
+    $pdf->Cell(20,10,utf8_decode($row['preguntas']),1,0,'C', 0);
     $pdf->Cell(40,10,utf8_decode($row['fechai']),1,0,'C', 0);
     $pdf->Cell(40,10,utf8_decode($row['fechau']),1,0,'C', 0);
-    $pdf->Cell(10,10,utf8_decode($row['tipo']),1,0,'C', 0);
+    $pdf->Cell(13,10,utf8_decode($row['tipo'] == 1 ? 'Expert' : 'Normal'),1,0,'C', 0);
     $pdf->Cell(20,10,utf8_decode($row['nivel']),1,1,'C', 0);
 }
 

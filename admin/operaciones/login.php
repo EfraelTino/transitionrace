@@ -1,5 +1,5 @@
 <?php 
-include "../../logica/conexion.php";
+include "conexion.php";
 
 $usuario= $_POST['usuario'];
 $password= $_POST['password'];

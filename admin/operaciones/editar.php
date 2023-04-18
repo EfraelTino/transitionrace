@@ -1,5 +1,6 @@
 <?php
-include "../../logica/conexion.php";
+include "conexion.php";
+
 $key = $_POST['llabeglobal'];
 $nombre_optica = $_POST['nombrecliente'];
 $email_optica = $_POST['email_optica'];

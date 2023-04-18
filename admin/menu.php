@@ -1,5 +1,6 @@
  <?php
-include "../logica/conexion.php";
+include "operaciones/conexion.php";
+
 // include "operaciones/verificar_sesion.php";
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">

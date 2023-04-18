@@ -11,11 +11,11 @@
    }
    */
    $host = "localhost";
-   // $user = "desarro1_transitionrun";
-   $user = "root";
-   // $pass = "_BTkOL.R^PfP";
-   $pass = "";
-   // $database = "desarro1_transitionrun";
+   $user = "desarro1_transitionrun";
+   // $user = "root";
+   $pass = "_BTkOL.R^PfP";
+   // $pass = "";
+   $database = "desarro1_transitionrun";
    $database = "transitionrun";
    $dblink = mysqli_connect($host, $user, $pass, $database);
    if($dblink){

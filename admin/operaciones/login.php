@@ -15,6 +15,7 @@ if($row > 0 ){
 }else{
     echo "<script>
         alert('Usuario y/o contraseña incorrecta');
+        window.history.back();
     </script>";
 
 }

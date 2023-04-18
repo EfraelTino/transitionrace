@@ -12,7 +12,6 @@ if($row > 0 ){
     $_SESSION['usuario_id'] = $row['id'];
     $_SESSION['username'] = $row['nombreusaurio'];
     header("location: ../dashboard.php");
-    // ?id=" .$id."&usuario=".$usuario
 }else{
     echo "<script>
         alert('Usuario y/o contraseña incorrecta');

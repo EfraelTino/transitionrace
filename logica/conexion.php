@@ -10,9 +10,9 @@
       }else{echo "NO ESTA CONECTADO";
    }
    */
-   // $host = "localhost";
+   $host = "localhost";
    $user = "desarro1_transitionrun";
-   $user = "root";
+   // $user = "root";
    $pass = "_BTkOL.R^PfP";
    // $pass = "";
    $database = "desarro1_transitionrun";

@@ -432,8 +432,13 @@ if(isset($_GET['estado']) && $_GET['estado'] == 0){
                         <div class="col-12" style="margin: 1.5rem 0">
                             <input type="number" class="form-control id" name="documento" required>
                         </div>
-                        <div class="col-12" style="margin: 1.5rem 0">
-                            <input type="text" class="form-control token" name="token" >
+                        <div class="col-12 mb-2 text-container">
+                                <p class="text-white form-check-label text-left" class="quien" style="text-decoration: overline; font-size: 1rem;
+                            text-decoration-thickness: 1px;
+                            padding-top: 0.2em;">Ingrese los caracteres de la llabe global a partir de:</p>
+                            </div>
+                        <div class="col-12" style="margin: 0">
+                            <input type="text" class="form-control token" name="token" value="ELAC-A-">
                         </div>
                         <div class="col-12" style="margin: 1.5rem 0">
                             <div class="form-check p-0">

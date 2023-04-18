@@ -111,7 +111,7 @@ include "operaciones/verificar_sesion.php";
                                     </tr>
                                 </thead>
                                 <?php
-                                $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
+                                $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
                                 $resultado = $dblink->query($consulta);
                                 $pos = 0;
                                 while ($row = $resultado->fetch_assoc()) {
@@ -195,7 +195,6 @@ include "operaciones/verificar_sesion.php";
 <script>
     $(document).ready(function() {
         $('#example').DataTable({
-            // "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
             "language": {
@@ -221,31 +220,20 @@ include "operaciones/verificar_sesion.php";
             "paging": false,
             "lengthChange": false,
             "searching": true,
-            "Search": "Buscar",
             "ordering": true,
             "autoWidth": false,
             "responsive": true,
         });;
 
     });
-    // $(function() {
-    //     $("#example1").DataTable({
-    //         "responsive": true,
-    //         "lengthChange": false,
-    //         "autoWidth": false,
-    //     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    //     $('#example2').DataTable({
-    //         "paging": false,
-    //         "lengthChange": false,
-    //         "searching": true,
-    //         "Search" : "Buscar",
-    //         "ordering": true,
-    //         "autoWidth": false,
-    //         "responsive": true,
-    //     });
-    // });
 </script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
+<script src="plugins/chart.js/Chart.min.js"></script>
+
 
 </body>
 

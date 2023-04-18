@@ -461,18 +461,18 @@ $token = $params['token'];
                                 <input type="text" class="form-control celular" required name="celular">
                             </div>
                             <div class="col-12 mb-2">
-                                <input type="text" class="form-control id" required name="identificacion" value="<?php echo $documento; ?>">
+                                <input type="text" class="form-control id" required name="identificacion" value="<?php echo $documento;?>" readonly>
                             </div>
                             <div class="col-12 mb-2">
-                                <input type="text" class="form-control my-3 token" required name="token" value="<?php echo $token; ?>"> 
+                                <input type="text" class="form-control my-3 token" required name="token" value="<?php echo $token; ?>" readonly> 
                             </div>
-                            <div class="col-12 mb-2 text-container">
-                                <p class="text-white form-check-label text-center" class="quien" style="text-decoration: overline;
+                            <div class="col-12  text-container">
+                                <p class="text-white form-check-label text-center" class="quien" style="text-decoration: overline; font-size: 1rem;
                             text-decoration-thickness: 1px;
-                            padding-top: 0.2em;">Quien me atiende en el laboratorio</p>
+                            padding-top: 0.2em;">¿Quien me atiende en el laboratorio?</p>
                             </div>
                             <div class="col-12 mb-2">
-                                <input type="text" class="form-control my-3 nombre-2" required name="encargado">
+                                <input type="text" class="form-control  nombre-2" required name="encargado">
                             </div>
                             <div class="col-12 mb-2">
                                 <div class="form-check p-0">

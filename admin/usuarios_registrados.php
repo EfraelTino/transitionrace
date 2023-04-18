@@ -111,7 +111,7 @@ include "operaciones/verificar_sesion.php";
                                     </tr>
                                 </thead>
                                 <?php
-                                $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
+                                $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
                                 $resultado = $dblink->query($consulta);
                                 $pos = 0;
                                 while ($row = $resultado->fetch_assoc()) {

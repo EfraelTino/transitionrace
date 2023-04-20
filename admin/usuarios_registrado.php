@@ -85,6 +85,7 @@ include "include/verificar_sesion.php";
 
 
                   </style>
+                  <h1>HOLA DE NUEVO</h1>
                   <thead>
                     <tr>
                       <th class="text-center">Nª</th>

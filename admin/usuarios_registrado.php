@@ -1,8 +1,6 @@
 <?php
 require "include/conexion.php";
 include "include/verificar_sesion.php";
-header('Content-Type: application/vnd.ms-excel;');//header('Content-Type: application/vnd.ms-excel;charset= "iso-8859-15"');
-header('Content-Disposition: attachment;filename="vivoRegistro.xls"');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,6 +87,7 @@ header('Content-Disposition: attachment;filename="vivoRegistro.xls"');
                   </style>
                   <thead>
                     <tr>
+                      <th class="text-center">Nª</th>
                       <th class="text-center">Llave global</th>
                       
                     </tr>
@@ -96,14 +95,44 @@ header('Content-Disposition: attachment;filename="vivoRegistro.xls"');
 
                   <tbody>
                     <?php
-                    $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
+                    $consulta = "SELECT DISTINCT id, documento, llabeglobal, email, nombrecliente, pais, registroapp, noregistrado, pointz, nombreusaurio, emailusuario, telefono, antencion, estado, ip, fechai, fechau, puntuacion, preguntas, dato1, dato2, dato3, dato4, dato5, tipo, pluss, veces, nivel 
+                    FROM clientestra 
+                    WHERE documento != '' OR documento IS NOT NULL 
+                    ORDER BY puntuacion DESC;";
                     $resultado = $dblink->query($consulta);
                     $pos = 0;
                     while ($row = $resultado->fetch_assoc()) {
+                      $pos++;
                     ?>
                       <tr>
+                        <td><?php echo $pos; ?></td>
 
                         <td class="text-center"><?php echo $row['llabeglobal']; ?></td>
+                        <td class="text-center"><?php echo $row['email']; ?></td>
+                        <td class="text-center"><?php echo $row['nombrecliente']; ?></td>
+                        <td class="text-center"><?php echo $row['pais']; ?></td>
+                        <td class="text-center"><?php echo $row['nombreusaurio']; ?></td>
+                        <td class="text-center"><?php echo $row['documento']; ?></td>
+                        <td class="text-center"><?php echo $row['emailusuario']; ?></td>
+                        <td class="text-center"><?php echo $row['telefono']; ?></td>
+                        <td class="text-center"><?php echo $row['antencion']; ?></td>
+                        <td class="text-center"><?php echo $row['estado'] == 1   ? 'Activo' : 'Desactivo'; ?></td>
+                        <td class="text-center"><?php echo $row['ip']; ?></td>
+                        <td class="text-center"><?php echo $row['fechai']; ?></td>
+                        <td class="text-center"><?php echo $row['fechau']; ?></td>
+                        <td class="text-center"><?php echo $row['puntuacion']; ?></td>
+                        <td class="text-center"><?php echo $row['preguntas']; ?></td>
+                        <td class="text-center"><?php echo $row['dato1']; ?></td>
+                        <td class="text-center"><?php echo $row['dato2']; ?></td>
+                        <td class="text-center"><?php echo $row['dato3']; ?></td>
+                        <td class="text-center"><?php echo $row['dato4']; ?></td>
+                        <td class="text-center"><?php echo $row['dato5']; ?></td>
+                        <td class="text-center"><?php echo $row['tipo'] == 1 ? 'Expert' : 'Normal'; ?></td>
+                        <td class="text-center"><?php echo $row['veces']; ?></td>
+                        <td class="text-center"><?php echo $row['nivel']; ?></td>
+                        <td class="text-center">
+                          <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatos<?php echo $row['id']; ?>"><i class="fa fa-edit"> </i></button>
+                        </td>
                       </tr>
                       <?php include "modalEditar.php"; ?>
                     <?php

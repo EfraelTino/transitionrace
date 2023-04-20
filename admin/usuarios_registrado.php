@@ -49,88 +49,56 @@ include "include/verificar_sesion.php";
 
                 <table id="example" class="table table-striped table-bordered">
                   <style>
-                    thead {
+                    thead{
                       background-color: #2C0341 !important;
-                      color: #fff !important;
+                      color:#fff !important;
                     }
-
-                    tbody,
-                    td {
+                    tbody, td{
                       background-color: #371441 !important;
                       color: #fff !important;
                     }
-
-                    .dataTables_length label,
-                    .dataTables_filter label {
+                    .dataTables_length label, .dataTables_filter label{
                       color: #fff !important;
                     }
-
-                    .dataTables_length label select {
+                    .dataTables_length label select{
                       background-color: #2C0341 !important;
                       color: #fff !important;
                     }
-
-                    .dataTables_filter label input {
+                    .dataTables_filter label input{
                       background-color: #2C0341 !important;
                     }
-
-                    .dataTables_info {
+                    .dataTables_info{
                       color: #fff !important;
                     }
-
-                    #example_previous a,
-                    #example_next a {
+                    #example_previous a , #example_next a{
                       background: #593662 !important;
                       color: #fff !important;
                       border-color: #2C0341 !important;
                     }
-
-                    .paginate_button a {
+                    .paginate_button  a{
                       color: #fff;
                       border: 0px;
                       border-color: #2C0341 !important;
                       background-color: #2C0341 !important;
 
                     }
+
+
                   </style>
                   <thead>
                     <tr>
                       <th class="text-center">Nª</th>
                       <th class="text-center">Llave global</th>
-                      <th class="text-center">Email</th>
-                      <th class="text-center">Nombre optica</th>
-                      <th class="text-center">Pais</th>
-                      <th class="text-center">Nombre usuario</th>
-                      <th class="text-center">Documento</th>
-                      <th class="text-center">Email Usuario</th>
-                      <th class="text-center">Teléfono</th>
-                      <th class="text-center">Recepcionista</th>
-                      <th class="text-center">Estado </th>
-                      <th class="text-center">IP</th>
-                      <th class="text-center">Fecha Inicio</th>
-                      <th class="text-center">Fecha Último</th>
-                      <th class="text-center">Puntuación Alta</th>
-                      <th class="text-center">Preguntas Acertadas</th>
-                      <th class="text-center">Certificado 1</th>
-                      <th class="text-center">Certificado 2</th>
-                      <th class="text-center">Certificado 3</th>
-                      <th class="text-center">Certificado 4</th>
-                      <th class="text-center">Certificado 5</th>
-                      <th class="text-center">Tipo de Jugador</th>
-                      <th class="text-center">Veces Jugados</th>
-                      <th class="text-center">Nivel de Jugador</th>
-                      <th class="text-center">Acciones</th>
+                      
                     </tr>
                   </thead>
 
                   <tbody>
                     <?php
-                    $sql = "SELECT DISTINCT id, documento, llabeglobal, email, nombrecliente, pais, registroapp, noregistrado, pointz, nombreusaurio, emailusuario, telefono, antencion, estado, ip, fechai, fechau, puntuacion, preguntas, dato1, dato2, dato3, dato4, dato5, tipo, pluss, veces, nivel FROM clientestra WHERE documento != '' ORDER BY puntuacion DESC";
-                    $resultado = $dblink->query($sql);
-                    $rows = $resultado->fetch_all(MYSQLI_ASSOC);
-                    $count = count($rows);
+                    $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
+                    $resultado = $dblink->query($consulta);
                     $pos = 0;
-                    foreach ($rows as $row) {
+                    while ($row = $resultado->fetch_assoc()) {
                       $pos++;
                     ?>
                       <tr>
@@ -138,32 +106,12 @@ include "include/verificar_sesion.php";
 
                         <td class="text-center"><?php echo $row['llabeglobal']; ?></td>
                         <td class="text-center"><?php echo $row['email']; ?></td>
-                        <td class="text-center"><?php echo $row['nombrecliente']; ?></td>
-                        <td class="text-center"><?php echo $row['pais']; ?></td>
-                        <td class="text-center"><?php echo $row['nombreusaurio']; ?></td>
-                        <td class="text-center"><?php echo $row['documento']; ?></td>
-                        <td class="text-center"><?php echo $row['emailusuario']; ?></td>
-                        <td class="text-center"><?php echo $row['telefono']; ?></td>
-                        <td class="text-center"><?php echo $row['antencion']; ?></td>
-                        <td class="text-center"><?php echo $row['estado'] ?></td>
-                        <td class="text-center"><?php echo $row['ip']; ?></td>
-                        <td class="text-center"><?php echo $row['fechai']; ?></td>
-                        <td class="text-center"><?php echo $row['fechau']; ?></td>
-                        <td class="text-center"><?php echo $row['puntuacion']; ?></td>
-                        <td class="text-center"><?php echo $row['preguntas']; ?></td>
-                        <td class="text-center"><?php echo $row['dato1']; ?></td>
-                        <td class="text-center"><?php echo $row['dato2']; ?></td>
-                        <td class="text-center"><?php echo $row['dato3']; ?></td>
-                        <td class="text-center"><?php echo $row['dato4']; ?></td>
-                        <td class="text-center"><?php echo $row['dato5']; ?></td>
-                        <td class="text-center"><?php echo $row['tipo'] ?></td>
-                        <td class="text-center"><?php echo $row['veces']; ?></td>
-                        <td class="text-center"><?php echo $row['nivel']; ?></td>
-                        <td class="text-center">
-                          <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatos<?php echo $row['id']; ?>"><i class="fa fa-edit"> </i></button>
-                        </td>
                       </tr>
-                    <?php } ?>
+                      <?php include "modalEditar.php"; ?>
+                    <?php
+                    }
+
+                    ?>
                   </tbody>
                 </table>
 

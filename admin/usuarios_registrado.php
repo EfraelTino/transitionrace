@@ -49,41 +49,49 @@ include "include/verificar_sesion.php";
 
                 <table id="example" class="table table-striped table-bordered">
                   <style>
-                    thead{
+                    thead {
                       background-color: #2C0341 !important;
-                      color:#fff !important;
+                      color: #fff !important;
                     }
-                    tbody, td{
+
+                    tbody,
+                    td {
                       background-color: #371441 !important;
                       color: #fff !important;
                     }
-                    .dataTables_length label, .dataTables_filter label{
+
+                    .dataTables_length label,
+                    .dataTables_filter label {
                       color: #fff !important;
                     }
-                    .dataTables_length label select{
+
+                    .dataTables_length label select {
                       background-color: #2C0341 !important;
                       color: #fff !important;
                     }
-                    .dataTables_filter label input{
+
+                    .dataTables_filter label input {
                       background-color: #2C0341 !important;
                     }
-                    .dataTables_info{
+
+                    .dataTables_info {
                       color: #fff !important;
                     }
-                    #example_previous a , #example_next a{
+
+                    #example_previous a,
+                    #example_next a {
                       background: #593662 !important;
                       color: #fff !important;
                       border-color: #2C0341 !important;
                     }
-                    .paginate_button  a{
+
+                    .paginate_button a {
                       color: #fff;
                       border: 0px;
                       border-color: #2C0341 !important;
                       background-color: #2C0341 !important;
 
                     }
-
-
                   </style>
                   <thead>
                     <tr>
@@ -117,10 +125,12 @@ include "include/verificar_sesion.php";
 
                   <tbody>
                     <?php
-                    $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
-                    $resultado = $dblink->query($consulta);
+                    $sql = "SELECT DISTINCT id, documento, llabeglobal, email, nombrecliente, pais, registroapp, noregistrado, pointz, nombreusaurio, emailusuario, telefono, antencion, estado, ip, fechai, fechau, puntuacion, preguntas, dato1, dato2, dato3, dato4, dato5, tipo, pluss, veces, nivel FROM clientestra WHERE documento != '' ORDER BY puntuacion DESC";
+                    $resultado = $dblink->query($sql);
+                    $rows = $resultado->fetch_all(MYSQLI_ASSOC);
+                    $count = count($rows);
                     $pos = 0;
-                    while ($row = $resultado->fetch_assoc()) {
+                    foreach ($rows as $row) {
                       $pos++;
                     ?>
                       <tr>
@@ -135,7 +145,7 @@ include "include/verificar_sesion.php";
                         <td class="text-center"><?php echo $row['emailusuario']; ?></td>
                         <td class="text-center"><?php echo $row['telefono']; ?></td>
                         <td class="text-center"><?php echo $row['antencion']; ?></td>
-                        <td class="text-center"><?php echo $row['estado'] == 1   ? 'Activo' : 'Desactivo'; ?></td>
+                        <td class="text-center"><?php echo $row['estado'] ?></td>
                         <td class="text-center"><?php echo $row['ip']; ?></td>
                         <td class="text-center"><?php echo $row['fechai']; ?></td>
                         <td class="text-center"><?php echo $row['fechau']; ?></td>
@@ -146,17 +156,14 @@ include "include/verificar_sesion.php";
                         <td class="text-center"><?php echo $row['dato3']; ?></td>
                         <td class="text-center"><?php echo $row['dato4']; ?></td>
                         <td class="text-center"><?php echo $row['dato5']; ?></td>
-                        <td class="text-center"><?php echo $row['tipo'] == 1 ? 'Expert' : 'Normal'; ?></td>
+                        <td class="text-center"><?php echo $row['tipo'] ?></td>
                         <td class="text-center"><?php echo $row['veces']; ?></td>
                         <td class="text-center"><?php echo $row['nivel']; ?></td>
                         <td class="text-center">
                           <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatos<?php echo $row['id']; ?>"><i class="fa fa-edit"> </i></button>
                         </td>
                       </tr>
-                    <?php
-                    }
-
-                    ?>
+                    <?php } ?>
                   </tbody>
                 </table>
 

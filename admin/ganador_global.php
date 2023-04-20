@@ -1,7 +1,6 @@
 
 <?php 
 include "include/conexion.php"; 
-include "include/busquedas.php";
 include "include/verificar_sesion.php";
 ?>
 <!DOCTYPE html>
@@ -57,11 +56,13 @@ include "include/verificar_sesion.php";
                         <tr>
                           <th>Id</th>
                           <th>id_estudiante</th>
+                          <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                       <?php 
-                      $sql = mysqli_query($dblink, "SELECT * FROM clientestra WHERE documento ='$documento' ") or die(mysqli_error($link));
+                      $sql = "SELECT * FROM clientestra WHERE documento";
+                      $resultado = mysqli_query($dblink, $sql);
                       if (mysqli_num_rows($resultado) > 0) {
                         while ($fila = mysqli_fetch_array($resultado)) {
                       ?>

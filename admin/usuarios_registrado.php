@@ -153,7 +153,6 @@ include "include/verificar_sesion.php";
                           <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatos<?php echo $row['id']; ?>"><i class="fa fa-edit"> </i></button>
                         </td>
                       </tr>
-                      <?php include "modalEditar.php"; ?>
                     <?php
                     }
 

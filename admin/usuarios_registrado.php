@@ -1,6 +1,8 @@
 <?php
-include "include/conexion.php";
+require "include/conexion.php";
 include "include/verificar_sesion.php";
+header('Content-Type: application/vnd.ms-excel;');//header('Content-Type: application/vnd.ms-excel;charset= "iso-8859-15"');
+header('Content-Disposition: attachment;filename="vivoRegistro.xls"');
 ?>
 <!DOCTYPE html>
 <html lang="en">

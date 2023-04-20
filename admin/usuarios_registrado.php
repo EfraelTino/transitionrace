@@ -87,7 +87,6 @@ include "include/verificar_sesion.php";
                   </style>
                   <thead>
                     <tr>
-                      <th class="text-center">Nª</th>
                       <th class="text-center">Llave global</th>
                       
                     </tr>
@@ -99,10 +98,8 @@ include "include/verificar_sesion.php";
                     $resultado = $dblink->query($consulta);
                     $pos = 0;
                     while ($row = $resultado->fetch_assoc()) {
-                      $pos++;
                     ?>
                       <tr>
-                        <td><?php echo $pos; ?></td>
 
                         <td class="text-center"><?php echo $row['llabeglobal']; ?></td>
                       </tr>

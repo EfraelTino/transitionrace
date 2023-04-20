@@ -26,15 +26,14 @@
       <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-          <li><a href="index.php"><i class="fa fa-home"></i> Inicio </a>
+          <li><a href="~#"><i class="fa fa-home"></i> Inicio </a>
 
 
 
           </li>
           <li><a href="usuarios_registrado.php">Usuarios registrados</a></li>
-              <li><a href="datos_institucionales.php">Usuarios registrados</a></li>
               <li><a href="periodo_academico.php">Ganador por países</a></li>
-              <li><a href="presente_per_academico.php">Ganador global</a></li>
+              <li><a href="ganador_global.php">Ganador global</a></li>
               <li><a href="programa_estudios.php">Programa de Estudios</a></li>
               <li><a href="modulo_formativo.php">Ver PDF</a></li>
               <li><a href="semestre.php">Descargar en excel</a></li>

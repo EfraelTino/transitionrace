@@ -57,31 +57,27 @@ include "include/verificar_sesion.php";
                         <tr>
                           <th>Id</th>
                           <th>id_estudiante</th>
-                          <th>usuario</th>
-                          <th>password</th>
                         </tr>
                       </thead>
                       <tbody>
                       <?php 
-                      $buscar_usu_estudiante_sesion = buscarUsuarioEstudianteById($conexion, );
-                      $res_b_u_e = mysqli_fetch_array($buscar_usu_estudiante_sesion);
-                      $id_d_b_S = $res_b_u_e['id_estudiante'];
-                      $buscar_estudiante_sesion =buscarUsuarioEstudianteById($conexion);
-                      $res_b_u_e = mysqli_fetch_array($buscar_estudiante_sesion);
-                        ?>
+                      $sql = mysqli_query($dblink, "SELECT * FROM clientestra WHERE documento ='$documento' ") or die(mysqli_error($link));
+                      if (mysqli_num_rows($resultado) > 0) {
+                        while ($fila = mysqli_fetch_array($resultado)) {
+                      ?>
                         <tr>
-                          <td><?php echo $res_b_u_e['id']; ?></td>
-                          <td><?php echo $res_b_u_e['id_estudiante']; ?></td>
-                          <td><?php echo $res_b_u_e['usuario'];  ?></td>
-                          <td><?php echo $res_b_u_e['password']; ?></td>
+                          <td><?php echo $fila['id']; ?></td>
+                          <td><?php echo $fila['documento']; ?></td>
                      
                           <td>
-                            <a href="actualizarSemestre.php?id=<?php echo $res_b_sem['id'];?>" class="btn btn-primary">Editar</a>
-                            <a href="operaciones/eliminar_semestre.php?id=<?php echo $res_b_sem['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            <a href="actualizarSemestre.php?id=<?php echo $fila['id'];?>" class="btn btn-primary">Editar</a>
+                            <a href="operaciones/eliminar_semestre.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
                           </td>
                           </td>
                         </tr>
                         <?php
+                        }
+                      }
                         ?>
                       </tbody>
                     </table>
@@ -90,8 +86,6 @@ include "include/verificar_sesion.php";
               </div>
           </div>
         </div>
-        <!-- /page content -->
-        <!-- footer content -->
         <footer>
           <div class="pull-right">
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>

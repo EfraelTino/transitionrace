@@ -159,7 +159,6 @@ include "include/verificar_sesion.php";
                       <?php include "modalEditar.php"; ?>
                     <?php
                     }
-
                     ?>
                   </tbody>
                 </table>

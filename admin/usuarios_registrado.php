@@ -49,49 +49,41 @@ include "include/verificar_sesion.php";
 
                 <table id="example" class="table table-striped table-bordered">
                   <style>
-                    thead {
+                    thead{
                       background-color: #2C0341 !important;
-                      color: #fff !important;
+                      color:#fff !important;
                     }
-
-                    tbody,
-                    td {
+                    tbody, td{
                       background-color: #371441 !important;
                       color: #fff !important;
                     }
-
-                    .dataTables_length label,
-                    .dataTables_filter label {
+                    .dataTables_length label, .dataTables_filter label{
                       color: #fff !important;
                     }
-
-                    .dataTables_length label select {
+                    .dataTables_length label select{
                       background-color: #2C0341 !important;
                       color: #fff !important;
                     }
-
-                    .dataTables_filter label input {
+                    .dataTables_filter label input{
                       background-color: #2C0341 !important;
                     }
-
-                    .dataTables_info {
+                    .dataTables_info{
                       color: #fff !important;
                     }
-
-                    #example_previous a,
-                    #example_next a {
+                    #example_previous a , #example_next a{
                       background: #593662 !important;
                       color: #fff !important;
                       border-color: #2C0341 !important;
                     }
-
-                    .paginate_button a {
+                    .paginate_button  a{
                       color: #fff;
                       border: 0px;
                       border-color: #2C0341 !important;
                       background-color: #2C0341 !important;
 
                     }
+
+
                   </style>
                   <thead>
                     <tr>
@@ -124,37 +116,51 @@ include "include/verificar_sesion.php";
                   </thead>
 
                   <tbody>
+                    <?php
+                    $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
+                    $resultado = $dblink->query($consulta);
+                    $pos = 0;
+                    while ($row = $resultado->fetch_assoc()) {
+                      $pos++;
+                    ?>
+                      <tr>
+                        <td><?php echo $pos; ?></td>
 
-                    <tr>
-                      <td>p echo $pos; ?></td>
-                      <td class="text-center">ho $row['llabeglobal']; ?></td>
-                      <td class="text-center">ho $row['email']; ?></td>
-                      <td class="text-center">ho $row['nombrecliente']; ?></td>
-                      <td class="text-center">ho $row['pais']; ?></td>
-                      <td class="text-center">ho $row['nombreusaurio']; ?></td>
-                      <td class="text-center">ho $row['documento']; ?></td>
-                      <td class="text-center">ho $row['emailusuario']; ?></td>
-                      <td class="text-center">ho $row['telefono']; ?></td>
-                      <td class="text-center">ho $row['antencion']; ?></td>
-                      <td class="text-center">ho $row['estado'] == 1 ? 'Activo' : 'Desactivo'; ?></td>
-                      <td class="text-center">ho $row['ip']; ?></td>
-                      <td class="text-center">ho $row['fechai']; ?></td>
-                      <td class="text-center">ho $row['fechau']; ?></td>
-                      <td class="text-center">ho $row['puntuacion']; ?></td>
-                      <td class="text-center">ho $row['preguntas']; ?></td>
-                      <td class="text-center">ho $row['dato1']; ?></td>
-                      <td class="text-center">ho $row['dato2']; ?></td>
-                      <td class="text-center">ho $row['dato3']; ?></td>
-                      <td class="text-center">ho $row['dato4']; ?></td>
-                      <td class="text-center">ho $row['dato5']; ?></td>
-                      <td class="text-center">ho $row['tipo'] == 1 ? 'Expert' : 'Normal'; ?></td>
-                      <td class="text-center">ho $row['veces']; ?></td>
-                      <td class="text-center">ho $row['nivel']; ?></td>
-                      <td class="text-center"> <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatosrow['id']; ?>"><i class="fa fa-edit"> </i></button>
-                      </td>
-                    </tr>
+                        <td class="text-center"><?php echo $row['llabeglobal']; ?></td>
+                        <td class="text-center"><?php echo $row['email']; ?></td>
+                        <td class="text-center"><?php echo $row['nombrecliente']; ?></td>
+                        <td class="text-center"><?php echo $row['pais']; ?></td>
+                        <td class="text-center"><?php echo $row['nombreusaurio']; ?></td>
+                        <td class="text-center"><?php echo $row['documento']; ?></td>
+                        <td class="text-center"><?php echo $row['emailusuario']; ?></td>
+                        <td class="text-center"><?php echo $row['telefono']; ?></td>
+                        <td class="text-center"><?php echo $row['antencion']; ?></td>
+                        <td class="text-center"><?php echo $row['estado'] == 1   ? 'Activo' : 'Desactivo'; ?></td>
+                        <td class="text-center"><?php echo $row['ip']; ?></td>
+                        <td class="text-center"><?php echo $row['fechai']; ?></td>
+                        <td class="text-center"><?php echo $row['fechau']; ?></td>
+                        <td class="text-center"><?php echo $row['puntuacion']; ?></td>
+                        <td class="text-center"><?php echo $row['preguntas']; ?></td>
+                        <td class="text-center"><?php echo $row['dato1']; ?></td>
+                        <td class="text-center"><?php echo $row['dato2']; ?></td>
+                        <td class="text-center"><?php echo $row['dato3']; ?></td>
+                        <td class="text-center"><?php echo $row['dato4']; ?></td>
+                        <td class="text-center"><?php echo $row['dato5']; ?></td>
+                        <td class="text-center"><?php echo $row['tipo'] == 1 ? 'Expert' : 'Normal'; ?></td>
+                        <td class="text-center"><?php echo $row['veces']; ?></td>
+                        <td class="text-center"><?php echo $row['nivel']; ?></td>
+                        <td class="text-center">
+                          <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatos<?php echo $row['id']; ?>"><i class="fa fa-edit"> </i></button>
+                        </td>
+                      </tr>
+                      <?php include "modalEditar.php"; ?>
+                    <?php
+                    }
+
+                    ?>
                   </tbody>
                 </table>
+
               </div>
             </div>
           </div>
@@ -162,6 +168,8 @@ include "include/verificar_sesion.php";
       </div>
     </div>
   </div>
+
+  <!-- jQuery -->
   <script src="Gentella/vendors/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="Gentella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>

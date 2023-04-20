@@ -124,50 +124,37 @@ include "include/verificar_sesion.php";
                   </thead>
 
                   <tbody>
-                    <!-- <?php
-                    $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
-                    $resultado = $dblink->query($consulta);
-                    $pos = 0;
-                    while ($row = $resultado->fetch_assoc()) {
-                      $pos++;
-                    ?> -->
-                      <tr>
-                        <td>p echo $pos; ?></td>
 
-                        <td class="text-center">ho $row['llabeglobal']; ?></td>
-                        <td class="text-center">ho $row['email']; ?></td>
-                        <td class="text-center">ho $row['nombrecliente']; ?></td>
-                        <td class="text-center">ho $row['pais']; ?></td>
-                        <td class="text-center">ho $row['nombreusaurio']; ?></td>
-                        <td class="text-center">ho $row['documento']; ?></td>
-                        <td class="text-center">ho $row['emailusuario']; ?></td>
-                        <td class="text-center">ho $row['telefono']; ?></td>
-                        <td class="text-center">ho $row['antencion']; ?></td>
-                        <td class="text-center">ho $row['estado'] == 1   ? 'Activo' : 'Desactivo'; ?></td>
-                        <td class="text-center">ho $row['ip']; ?></td>
-                        <td class="text-center">ho $row['fechai']; ?></td>
-                        <td class="text-center">ho $row['fechau']; ?></td>
-                        <td class="text-center">ho $row['puntuacion']; ?></td>
-                        <td class="text-center">ho $row['preguntas']; ?></td>
-                        <td class="text-center">ho $row['dato1']; ?></td>
-                        <td class="text-center">ho $row['dato2']; ?></td>
-                        <td class="text-center">ho $row['dato3']; ?></td>
-                        <td class="text-center">ho $row['dato4']; ?></td>
-                        <td class="text-center">ho $row['dato5']; ?></td>
-                        <td class="text-center">ho $row['tipo'] == 1 ? 'Expert' : 'Normal'; ?></td>
-                        <td class="text-center">ho $row['veces']; ?></td>
-                        <td class="text-center">ho $row['nivel']; ?></td>
-                        <td class="text-center">                   <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatos<?php echo $row['id']; ?>"><i class="fa fa-edit"> </i></button>
-                        </td>
-                      </tr>
-                      <!-- <?php include "modalEditar.php"; ?>
-                    <?php
-                    }
-
-                    ?> -->
+                    <tr>
+                      <td>p echo $pos; ?></td>
+                      <td class="text-center">ho $row['llabeglobal']; ?></td>
+                      <td class="text-center">ho $row['email']; ?></td>
+                      <td class="text-center">ho $row['nombrecliente']; ?></td>
+                      <td class="text-center">ho $row['pais']; ?></td>
+                      <td class="text-center">ho $row['nombreusaurio']; ?></td>
+                      <td class="text-center">ho $row['documento']; ?></td>
+                      <td class="text-center">ho $row['emailusuario']; ?></td>
+                      <td class="text-center">ho $row['telefono']; ?></td>
+                      <td class="text-center">ho $row['antencion']; ?></td>
+                      <td class="text-center">ho $row['estado'] == 1 ? 'Activo' : 'Desactivo'; ?></td>
+                      <td class="text-center">ho $row['ip']; ?></td>
+                      <td class="text-center">ho $row['fechai']; ?></td>
+                      <td class="text-center">ho $row['fechau']; ?></td>
+                      <td class="text-center">ho $row['puntuacion']; ?></td>
+                      <td class="text-center">ho $row['preguntas']; ?></td>
+                      <td class="text-center">ho $row['dato1']; ?></td>
+                      <td class="text-center">ho $row['dato2']; ?></td>
+                      <td class="text-center">ho $row['dato3']; ?></td>
+                      <td class="text-center">ho $row['dato4']; ?></td>
+                      <td class="text-center">ho $row['dato5']; ?></td>
+                      <td class="text-center">ho $row['tipo'] == 1 ? 'Expert' : 'Normal'; ?></td>
+                      <td class="text-center">ho $row['veces']; ?></td>
+                      <td class="text-center">ho $row['nivel']; ?></td>
+                      <td class="text-center"> <button type="button" class="btn btn-primary editar-btn" data-toggle="modal" data-target="#editarDatosrow['id']; ?>"><i class="fa fa-edit"> </i></button>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
-
               </div>
             </div>
           </div>

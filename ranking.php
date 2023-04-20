@@ -1,5 +1,6 @@
 <?php 
 include "logica/conexion.php";
+include "logica/verificarsesion.php";
 $id='';
 $query_string=$_GET['q'];
 $decode_query_string= base64_decode($query_string);

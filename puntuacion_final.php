@@ -1,5 +1,6 @@
 <?php
 require "logica/conexion.php";
+require "logica/verificarsesion.php";
 $id = '';
 $decode_query_string = $_GET['q'];
 

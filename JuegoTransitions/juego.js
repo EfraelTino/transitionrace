@@ -273,7 +273,7 @@ async function update(dt) {
             recargaOIL(9);
         }
     }
-     console.log(gasolina);
+    //  console.log(gasolina);
     if (gasolina < 1) {
 
         if (!gameOver) {

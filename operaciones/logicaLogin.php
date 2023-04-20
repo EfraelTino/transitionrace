@@ -37,6 +37,8 @@ if ($row > 0) {
             "veces" => $veces,
             "nivel" => $nivel,
         ]);
+        session_start();
+        $_SESSION['usuario_id'] = $array['id'];
         $encoded_query_string = base64_encode($query_string);
         header("location: ../instrucciones.php?q=" . $encoded_query_string);
     } else {

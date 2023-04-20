@@ -1,5 +1,6 @@
 <?php
 require "logica/conexion.php";
+require "logica/verificarsesion.php";
 date_default_timezone_set('America/Bogota');
 $fechaultimo = date('m-d-Y h:i:s', time());
 $preguntas_correctas = $_GET['preguntas'];

@@ -1,5 +1,7 @@
 <?php
 include "logica/conexion.php";
+include "logica/verificarsesion.php";
+
 $documento = '';
 $tipo = '';
 $veces = '';
@@ -14,6 +16,7 @@ $tipo = $params['tipo'];
 $veces = $params['veces'];
 $id = $params['id'];
 $nivel = $params['nivel'];
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

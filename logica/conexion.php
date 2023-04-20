@@ -11,15 +11,15 @@
    }
    */
    $host = "localhost";
-   $user = "desarro1_transitionrun";
-   // $user = "root";
-   $pass = "_BTkOL.R^PfP";
-   // $pass = "";
-   $database = "desarro1_transitionrun";
-   // $database = "transitionrun";
+  //  $user = "u960900126_Efrael";
+   $user = "root";
+  //  $pass = "AdminTransitionRun2023";
+   $pass = "";
+  //  $database = "u960900126_transitionsrun";
+   $database = "transitionrun";
    $dblink = mysqli_connect($host, $user, $pass, $database);
    if($dblink){
-     //echo "conectadosss";
+    //  echo "conectadosss";
    }else{
     //  echo "NO CONECTADO";
    }

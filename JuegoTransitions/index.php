@@ -1,5 +1,7 @@
 <?php 
 include "../logica/conexion.php";
+include "../logica/verificarsesion.php";
+
 $documento='';
 $tipo='';
 $id='';

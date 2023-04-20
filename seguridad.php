@@ -1,5 +1,6 @@
 <?php
 include "logica/conexion.php";
+include "logica/verificarsesion.php";
 $documento = '';
 $tipo = '';
 $veces = '';
@@ -498,7 +499,7 @@ $nivel = $params['nivel'];
             ]);
             $encoded_query_string = base64_encode($query_string);
             ?>
-            window.location.href = "JuegoTransitions/index.php<?php echo '?q=' . $encoded_query_string; ?> ";
+            window.location.href = "./JuegoTransitions/index.php<?php echo '?q=' . $encoded_query_string; ?> ";
         }
     </script>
 </body>

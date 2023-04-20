@@ -1,5 +1,5 @@
 <?php
-require "include/conexion.php";
+include "include/conexion.php";
 include "include/verificar_sesion.php";
 ?>
 <!DOCTYPE html>
@@ -37,18 +37,7 @@ include "include/verificar_sesion.php";
       <?php include "include/menu.php" ?>
       <!-- Menu en la parte superior -->
       <!-- page content -->
-      <div class="right_col" role="main" style="background-color: #593662 !important;">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="x_panel" style="background-color: #371441 !important; border: none;">
-              <div class="x_title" style="border-color:#2C0341 !important">
-                <h2 style="color:#fff !important;">Usuarios registrados</h2>
-                <div class="clearfix"></div>
-              </div>
-              <div class="x_content">
-
-                <table id="example" class="table table-striped table-bordered">
-                  <style>
+      <style>
                     thead{
                       background-color: #2C0341 !important;
                       color:#fff !important;
@@ -85,6 +74,18 @@ include "include/verificar_sesion.php";
 
 
                   </style>
+      <div class="right_col" role="main" style="background-color: #593662 !important;">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel" style="background-color: #371441 !important; border: none;">
+              <div class="x_title" style="border-color:#2C0341 !important">
+                <h2 style="color:#fff !important;">Usuarios registrados</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <table id="example" class="table table-striped table-bordered">
+                  
                   <thead>
                     <tr>
                       <th class="text-center">Nª</th>
@@ -117,10 +118,7 @@ include "include/verificar_sesion.php";
 
                   <tbody>
                     <?php
-                    $consulta = "SELECT DISTINCT id, documento, llabeglobal, email, nombrecliente, pais, registroapp, noregistrado, pointz, nombreusaurio, emailusuario, telefono, antencion, estado, ip, fechai, fechau, puntuacion, preguntas, dato1, dato2, dato3, dato4, dato5, tipo, pluss, veces, nivel 
-                    FROM clientestra 
-                    WHERE documento != '' OR documento IS NOT NULL 
-                    ORDER BY puntuacion DESC";
+                    $consulta = "select DISTINCT id,documento,llabeglobal,email,nombrecliente,pais, registroapp,noregistrado,pointz, nombreusaurio,emailusuario,telefono,antencion,estado,ip,fechai,fechau,puntuacion,preguntas,dato1,dato2,dato3,dato4,dato5,tipo,pluss,veces, nivel from clientestra WHERE documento != '' ORDER BY puntuacion DESC";
                     $resultado = $dblink->query($consulta);
                     $pos = 0;
                     while ($row = $resultado->fetch_assoc()) {
@@ -159,6 +157,7 @@ include "include/verificar_sesion.php";
                       <?php include "modalEditar.php"; ?>
                     <?php
                     }
+
                     ?>
                   </tbody>
                 </table>
@@ -168,6 +167,9 @@ include "include/verificar_sesion.php";
           </div>
         </div>
       </div>
+      <!-- /page content -->
+      <!-- footer content -->
+      <!-- /footer content -->
     </div>
   </div>
 

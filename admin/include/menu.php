@@ -32,33 +32,33 @@
 
           </li>
           <li><a href="usuarios_registrado.php">Usuarios registrados</a></li>
-              <li><a href="periodo_academico.php">Ganador por países</a></li>
+              <!-- <li><a href="periodo_academico.php">Ganador por países</a></li> -->
               <li><a href="ganador_global.php">Ganador global</a></li>
-              <li><a href="programa_estudios.php">Programa de Estudios</a></li>
+              <!-- <li><a href="programa_estudios.php">Programa de Estudios</a></li> -->
               <li><a href="modulo_formativo.php">Ver PDF</a></li>
               <li><a href="semestre.php">Descargar en excel</a></li>
           </li>
           <li><a><i class="fa fa-desktop"></i> Programación Académica <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="prog_ud.php">Programación de Unidades Didacticas</a></li>
+              <!-- <li><a href="prog_ud.php">Programación de Unidades Didacticas</a></li>
               <li><a href="matricula.php"> Matrícula</a></li>
               <li><a href="calificacion.php"> Calificaciones</a></li>
-              <li><a href="condicion.php"> Condición</a></li>
+              <li><a href="condicion.php"> Condición</a></li> -->
             </ul>
           </li>
-          <li><a><i class="fa fa-desktop"></i> Docentes <span class="fa fa-chevron-down"></span></a>
+          <!-- <li><a><i class="fa fa-desktop"></i> Docentes <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="docentes.php">Docente</a></li>
               <li><a href="usuarios_docentes.php">Usuarios Docentes</a></li>
             </ul>
-          </li>
-          <li><a><i class="fa fa-book"></i> Estudiantes <span class="fa fa-chevron-down"></span></a>
+          </li> -->
+          <!-- <li><a><i class="fa fa-book"></i> Estudiantes <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
 
               <li><a href="estudiantes.php">Estudiante</a></li>
               <li><a href="usuarios_estudiantes.php">Usuarios Estudiante</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

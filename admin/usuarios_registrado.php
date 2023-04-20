@@ -85,12 +85,33 @@ include "include/verificar_sesion.php";
 
 
                   </style>
-                  <h1>HOLA DE NUEVO</h1>
                   <thead>
                     <tr>
                       <th class="text-center">Nª</th>
                       <th class="text-center">Llave global</th>
-                      
+                      <th class="text-center">Email</th>
+                      <th class="text-center">Nombre optica</th>
+                      <th class="text-center">Pais</th>
+                      <th class="text-center">Nombre usuario</th>
+                      <th class="text-center">Documento</th>
+                      <th class="text-center">Email Usuario</th>
+                      <th class="text-center">Teléfono</th>
+                      <th class="text-center">Recepcionista</th>
+                      <th class="text-center">Estado </th>
+                      <th class="text-center">IP</th>
+                      <th class="text-center">Fecha Inicio</th>
+                      <th class="text-center">Fecha Último</th>
+                      <th class="text-center">Puntuación Alta</th>
+                      <th class="text-center">Preguntas Acertadas</th>
+                      <th class="text-center">Certificado 1</th>
+                      <th class="text-center">Certificado 2</th>
+                      <th class="text-center">Certificado 3</th>
+                      <th class="text-center">Certificado 4</th>
+                      <th class="text-center">Certificado 5</th>
+                      <th class="text-center">Tipo de Jugador</th>
+                      <th class="text-center">Veces Jugados</th>
+                      <th class="text-center">Nivel de Jugador</th>
+                      <th class="text-center">Acciones</th>
                     </tr>
                   </thead>
 
@@ -99,7 +120,7 @@ include "include/verificar_sesion.php";
                     $consulta = "SELECT DISTINCT id, documento, llabeglobal, email, nombrecliente, pais, registroapp, noregistrado, pointz, nombreusaurio, emailusuario, telefono, antencion, estado, ip, fechai, fechau, puntuacion, preguntas, dato1, dato2, dato3, dato4, dato5, tipo, pluss, veces, nivel 
                     FROM clientestra 
                     WHERE documento != '' OR documento IS NOT NULL 
-                    ORDER BY puntuacion DESC;";
+                    ORDER BY puntuacion DESC";
                     $resultado = $dblink->query($consulta);
                     $pos = 0;
                     while ($row = $resultado->fetch_assoc()) {

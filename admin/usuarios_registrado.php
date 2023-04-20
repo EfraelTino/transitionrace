@@ -105,7 +105,6 @@ include "include/verificar_sesion.php";
                         <td><?php echo $pos; ?></td>
 
                         <td class="text-center"><?php echo $row['llabeglobal']; ?></td>
-                        <td class="text-center"><?php echo $row['email']; ?></td>
                       </tr>
                       <?php include "modalEditar.php"; ?>
                     <?php

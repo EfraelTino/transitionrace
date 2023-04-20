@@ -1,0 +1,926 @@
+@font-face {
+  font-family: "akhand_softblack";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-black-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-black-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-black-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softbold";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-bold-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-bold-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-bold-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softextrabold";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extrabold-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extrabold-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softextralight";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extralight-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extralight-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extralight-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-extralight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softlight";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-light-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-light-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-light-webfont.woff2") format("woff2"), url("../fonts/indian_type_foundry_-_akhandsoft-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softregular";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-regular-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-regular-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-regular-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softsemibold";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semibold-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semibold-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "akhand_softsemilight";
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semilight-webfont.eot");
+  src: url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semilight-webfont.eot?#iefix") format("embedded-opentype"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semilight-webfont.woff2") format("woff2"), url("transitionrungame/fonts/indian_type_foundry_-_akhandsoft-semilight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  max-width: 80%;
+}
+
+html,
+body {
+  background: transparent;
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+  z-index: -1;
+}
+
+.div-background {
+  background: url(transitionrungame/images/fondo.png) center center fixed !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+  /* max-height: 200vh; */
+  z-index: -1;
+}
+
+.navbar {
+  position: fixed;
+  min-width: 100%;
+  z-index: 9999;
+  padding-right: 2rem;
+}
+
+.navbar .btn-menu {
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .btn-menu:hover,
+.navbar .btn-menu:active {
+  background-color: #561077;
+}
+
+.navbar .btn-oc-modal-terminos {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .btn-oc-modal-terminos:hover,
+.navbar .btn-oc-modal-terminos:active {
+  background-color: #561077;
+}
+
+.logo-xd {
+  width: 100%;
+  min-width: 180px;
+  max-width: 640px;
+  height: auto;
+  object-fit: cover;
+}
+
+.texto-1 {
+  font-family: "akhand_softregular";
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.footer {
+  font-size: .8rem;
+  bottom: 0;
+  margin: 0 0 0 0;
+}
+
+.footer .text-footer {
+  color: white;
+  left: 0;
+  bottom: 0;
+  font-family: "akhand_softregular";
+}
+
+.footer-registro {
+  font-size: .8rem;
+  bottom: -40%;
+  margin: 0 0 0 0;
+}
+
+.footer-registro .text-footer {
+  color: white;
+  left: 0;
+  bottom: 0;
+  font-family: "akhand_softregular";
+}
+
+.div-botones {
+  background: url(transitionrungame/images/bg_botones.png);
+  background-position: 0 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 186px;
+}
+
+.cont-es {
+  padding: 0 1rem;
+}
+
+.div-botones .btn-estilo1 {
+  text-transform: uppercase;
+  color: white;
+  font-family: "akhand_softbold";
+  margin-top: .5rem;
+  height: max-content;
+}
+
+.div-botones .btn-estilo1:hover,
+.div-botones .btn-estilo1:active {
+  border: 1px solid white;
+  background: #561077;
+}
+
+.cont-es-2 {
+  margin-top: -9rem;
+}
+
+.btn-estilo2 {
+  color: white;
+  font-family: "akhand_softbold";
+  /* font-size: 1.7rem; */
+  font-size: 1rem;
+}
+
+.btn-estilo2:hover,
+.btn-estilo2:active {
+  text-decoration: underline;
+  color: white;
+}
+
+.div-nav-terminos {
+  position: fixed;
+  min-height: 100vh;
+  background: #561077;
+  top: 0;
+  padding: 2rem;
+  display: none;
+  z-index: 9999;
+}
+.texto-inicio-contenedor {
+  position: relative;
+  width: 250%;
+}
+.texto-inicio-contenedor .img-punto{
+  width: 200%;
+}
+  .texto-inicio-excelente {
+  font-family: "akhand_softregular";
+  position: absolute;
+  top: 55%;
+  left: 60%;
+  color: white;
+  text-align: center;
+  transform: translate(-20%, -50%);
+  transform-origin: 50% 0;
+  font-size: .3rem;
+}
+
+.div-nav-terminos .btn-terminos {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  font-family: "akhand_softregular";
+  font-size: 1.5rem;
+}
+
+.div-nav-terminos .btn-terminos:hover,
+.div-nav-terminos .btn-terminos:active {
+  color: white;
+  text-decoration: underline;
+}
+
+.div-nav-terminos .btn-terminos.closed {
+  float: right;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.div-nav-terminos.active {
+  display: block;
+}
+
+.text-instrucciones {
+  font-family: "akhand_softbold";
+  font-size: 0.6rem;
+}
+
+.registro_re {
+  width: 100%;
+  min-width: 180px;
+  max-width: 540px;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal .modal-dialog {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+.modal .modal-dialog .modal-content {
+  background: #561077;
+}
+
+.modal .modal-dialog .modal-content .modal-header {
+  border: none;
+}
+
+.modal .modal-dialog .modal-content .modal-header .text-titulo-terminos {
+  font-family: "akhand_softbold";
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.modal .modal-dialog .modal-content .modal-body {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+.modal .modal-dialog .modal-content .modal-body .text-terminos {
+  font-family: "akhand_softregular";
+  font-size: 1.7rem;
+}
+
+.modal .modal-dialog .modal-content.resp {
+  background-color: transparent;
+}
+
+.modal .modal-dialog .modal-content.resp .modal-body {
+  max-height: auto;
+  overflow: auto;
+}
+.modal .modal-dialog .modal-content.resp .modal-body {
+  max-height: auto;
+  overflow: auto;
+}
+.modal-header{
+  position: relative;
+}
+.modal-header .btn-close{
+  position: absolute !important;
+  background:none  !important;
+  margin: 0  !important;
+  padding: 0  !important;
+  top: 0  !important;
+  right: 0  !important;
+}
+.container-sd {
+  position: relative;
+}
+
+.form1 {
+  position: absolute;
+  top: 22%;
+  left: 53%;
+  z-index: 1;
+}
+.form2 {
+  position: absolute;
+  top: 25%;
+  left: 52%;
+  z-index: 1;
+}
+.text-pregunta{
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  z-index: 1;
+  color: #fff;
+  font-family: "akhand_softregular";
+  font-size: 1rem;
+
+}
+.contenedor-respuestas{
+  line-height: 18px;
+}
+.form-control-juego{
+  background-color: transparent;
+  border: none;
+  font-family: "akhand_softregular";
+  font-size: 1rem;
+}
+.link-navigation {
+  font-family: "akhand_softbold";
+  font-size: 0.9rem;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+form .input-group-text {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+form .form-check-label {
+  font-family: "akhand_softbold";
+  font-size: 0.7rem;
+}
+
+form .form-control {
+  border: none;
+  position: relative;
+  min-height: 50px;
+  padding-left: 3rem;
+  color: white;
+  font-family: "akhand_softregular";
+  font-size: 1rem;
+  /* padding-bottom: 1.2rem; */
+}
+
+form .form-controls {
+  border: none;
+  position: relative;
+  min-height: 20px;
+  padding-left: 3rem;
+  color: white;
+  font-family: "akhand_softregular";
+  font-size: 1rem;
+  width:150%;
+  line-height: 35px;
+  padding-bottom: .3rem;
+}
+form .form-controls:focus,
+form .form-controls:active {
+  color: white;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem transparent;
+}
+form .form-control:focus,
+form .form-control:active {
+  color: white;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem transparent;
+}
+
+form .form-control.nombre {
+  background: transparent url("transitionrungame/images/form/nombre.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+
+form .form-control.optica {
+  background: transparent url("transitionrungame/images/form/optica.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+
+form .form-control.email {
+  background: transparent url("transitionrungame/images/form/email.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+
+form .form-control.celular {
+  background: transparent url("transitionrungame/images/form/Celular.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+form .form-control.id-1 {
+  background: transparent url("transitionrungame/images/form/id-1.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-controls.id-1 {
+  background: transparent url("transitionrungame/images/form/id-1.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-control.id-2 {
+  background: transparent url("transitionrungame/images/form/id-1.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-controls.id-2 {
+  background: transparent url("transitionrungame/images/form/id-2.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-control.id-3 {
+  background: transparent url("transitionrungame/images/form/id-1.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-controls.id-3 {
+  background: transparent url("transitionrungame/images/form/id-3.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-control.id-4 {
+  background: transparent url("transitionrungame/images/form/id-1.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-controls.id-4 {
+  background: transparent url("transitionrungame/images/form/id-4.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-control.id-5 {
+  background: transparent url("transitionrungame/images/form/id-1.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-controls.id-5 {
+  background: transparent url("transitionrungame/images/form/id-5.png");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 100%;
+}
+form .form-control.id {
+  background: transparent url("transitionrungame/images/form/id.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+form .form-control.estado {
+  background: transparent url("transitionrungame/images/form/estado.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+
+form .form-control.token {
+  background: transparent url("transitionrungame/images/form/token.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.img-carrera-2{
+  width: 300px;
+}
+.contenedor-puntos{
+  position: relative;
+}
+
+.puntos-text, .cantidad-puntos, .cantidad-puesto, .puesto-text{
+  color: black;
+  font-family: "akhand_softbold";;
+}
+
+.cantidad-puntos{
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.cantidad-puesto{
+  top: 65%;
+  left: 43%;
+  font-weight: 900;
+}
+.puntos-text-1, .cantidad-puntos-1, .cantidad-puesto-1, .puesto-text-1{
+  color: black;
+  font-family: "akhand_softbold";;
+}
+
+.cantidad-puntos-1{
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.cont-img>a {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 30%;
+  left: 93.4%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.cont-img {
+  position: relative;
+
+}
+.cont-img>a {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20%;
+  left: 93%;
+}
+
+.close-inactivo {
+  width: 44px;
+  opacity: 1;
+}
+.close-inactivo:hover{
+  opacity: 1 !important;
+}
+.cont-imgs {
+  width: 100%;
+  height: 100%;
+  min-width: 50vw;
+  min-height: 50vmin;
+  position: relative;
+}
+.cantidad-puesto-1{
+  top: 32%;
+  left: 8.3%;
+  font-weight: 900;
+}
+.img-lgo-instrucciones {
+  margin-top: -3rem;
+}
+form .form-control.nombre-2 {
+  background: transparent url("transitionrungame/images/form/nombre-2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+.img-inactivo {
+  width: 280px;
+}
+.img-lgo-instruccioness {
+  margin-top: -1rem;
+}
+.form-enviado-modal{
+  position: relative;
+}
+.img_form_enviado{
+  width: 280px;
+}
+.close_modal_registro{
+  width: 40px;
+  position: absolute;
+  top:5%;
+  left:84%;
+}
+.label-rombo {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.label-rombo p {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  margin-top: 5px;
+}
+
+.checkbox-svg {
+  display: none;
+}
+
+.checkbox-svg-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.checkbox-svg-icon path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+}
+
+.checkbox-svg-icon-check {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.checkbox-svg:checked+.checkbox-svg-icon .checkbox-svg-icon-check {
+  opacity: 1;
+}
+
+.checkbox-svg:checked+.checkbox-svg-icon path:first-of-type {
+  stroke: #ffffff;
+}
+
+.checkbox-svg:disabled+.checkbox-svg-icon path:first-of-type {
+  stroke: #ffffff;
+  cursor: not-allowed;
+}
+
+@media (min-width: 450px) {
+  form .form-control {
+    padding-bottom: 0;
+
+  }
+
+  .div-background {
+    min-height: 105vh;
+  }
+
+  .cont-es {
+    padding: 0 1rem;
+  }
+
+  .div-botones .btn-estilo1 {
+    margin-top: 1.5rem;
+  }
+
+  .cont-es-2 {
+    margin-top: -7rem;
+  }
+
+  .btn-estilo2 {
+    font-size: 1.3rem;
+  }
+  form .form-control {
+    padding-left: 4rem;
+  }
+  
+  form .form-controls {
+    padding-left: 4rem;
+
+  }
+}
+@media (min-width: 576px){
+  .img_form_enviado{
+      width: 480px !important;
+    }
+    .close_modal_registro{
+      width: 60px;
+      top:10%;
+      left:88%;
+    }
+    
+    .cont-img>button {
+      background: none;
+      border: none;
+      position: absolute;
+      top: 10%;
+      left: 87%;
+  }
+  .cont-img>a {
+    top: 25%;
+    left: 93%;
+  }
+  .img-inactivo {
+    width: 480px;
+}
+
+.close-inactivo {
+  width: 50px;
+}
+}
+@media (min-width:580px) {
+  .div-background {
+    min-height: 110vh;
+  }
+}
+
+@media (min-width:767.98px) {
+  .texto-1 {
+    font-size: 1.2rem;
+  }
+  form .form-control{
+    font-size: 1.3rem;
+  } 
+  .div-botones .btn-estilo1 {
+    margin-top: .8rem;
+    font-size: 1.3rem;
+    
+  }
+  .close-inactivo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .modal-dialog {
+    min-height: calc(100vh - 20px);
+  }
+
+  html,
+  body {
+    background: transparent;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+
+  .navbar {
+    position: relative;
+    min-width: 100%;
+  }
+
+  .div-botones {
+    flex-direction: row;
+  }
+
+  .texto-1 {
+    text-align: center;
+  }
+  .img-lgo-instruccioness{
+    width: 520px;
+  }
+}
+
+@media (min-width:920px) {
+  .text-instrucciones {
+    font-size: .95rem;
+  }
+  .img-carrera-2{
+    width: 500px;
+  }
+  .div-botones .btn-estilo1 {
+    font-size: 1.5rem;
+  }
+  .contenedor-respuestas{
+    line-height: 25px;
+  }
+  .form2 {
+
+    top: 33%;
+    left: 52%;
+  }
+  .div-background {
+    min-height: 110vh;
+  }
+}
+
+@media (min-width:1200px) {
+
+  .div-background {
+    min-height: 100vh;
+  }
+
+  .div-botones .btn-estilo1 {
+    font-size: 1.9rem;
+  }
+  .form1{
+    left: 53%;
+    top: 20%;
+  }
+  .img-carrera-2{
+    width: 700px;
+  }
+  .div-botones .btn-estilo1 {
+    font-size: 1.5rem;
+  }
+  .contenedor-respuestas{
+    line-height: 38px;
+  }
+  .text-pregunta{
+    font-size: 1rem;
+    top: 48%;
+    left: 13%;
+  }
+  .form2 {
+    top: 33%;
+    left: 52%;
+  }
+  .form-control-juego{
+    font-size: 1.3rem;
+  }
+  .img_form_enviado{
+    width: 580px !important;
+  }
+  .cont-img>a {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 24% !important;
+    left: 94% !important;
+}
+.close-inactivo {
+  width: 70px;
+}
+.img-inactivo {
+  width: 680px !important;
+}
+  .close_modal_registro{
+    width: 60px;
+    top:11%;
+    left:88%;
+  }
+  .texto-inicio-excelente {
+    top: 55 !important;
+    left: 60%;
+    font-size: 1rem !important;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
